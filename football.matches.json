@@ -1,6 +1,8 @@
 [
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e001" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e001"
+    },
     "id": "1",
     "home_team_id": "1",
     "away_team_id": "2",
@@ -18,7 +20,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e002" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e002"
+    },
     "id": "2",
     "home_team_id": "3",
     "away_team_id": "4",
@@ -36,7 +40,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e003" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e003"
+    },
     "id": "3",
     "home_team_id": "5",
     "away_team_id": "6",
@@ -54,7 +60,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e004" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e004"
+    },
     "id": "4",
     "home_team_id": "13",
     "away_team_id": "14",
@@ -72,7 +80,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e005" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e005"
+    },
     "id": "5",
     "home_team_id": "11",
     "away_team_id": "12",
@@ -90,7 +100,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e006" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e006"
+    },
     "id": "6",
     "home_team_id": "15",
     "away_team_id": "16",
@@ -108,7 +120,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e007" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e007"
+    },
     "id": "7",
     "home_team_id": "9",
     "away_team_id": "10",
@@ -126,7 +140,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e008" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e008"
+    },
     "id": "8",
     "home_team_id": "7",
     "away_team_id": "8",
@@ -144,7 +160,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e009" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e009"
+    },
     "id": "9",
     "home_team_id": "19",
     "away_team_id": "20",
@@ -162,7 +180,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e010" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e010"
+    },
     "id": "10",
     "home_team_id": "17",
     "away_team_id": "18",
@@ -180,7 +200,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e011" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e011"
+    },
     "id": "11",
     "home_team_id": "21",
     "away_team_id": "22",
@@ -198,7 +220,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e012" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e012"
+    },
     "id": "12",
     "home_team_id": "23",
     "away_team_id": "24",
@@ -216,7 +240,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e013" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e013"
+    },
     "id": "13",
     "home_team_id": "27",
     "away_team_id": "28",
@@ -234,7 +260,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e014" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e014"
+    },
     "id": "14",
     "home_team_id": "29",
     "away_team_id": "30",
@@ -252,7 +280,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e015" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e015"
+    },
     "id": "15",
     "home_team_id": "25",
     "away_team_id": "26",
@@ -270,7 +300,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e016" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e016"
+    },
     "id": "16",
     "home_team_id": "31",
     "away_team_id": "32",
@@ -288,7 +320,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e017" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e017"
+    },
     "id": "17",
     "home_team_id": "33",
     "away_team_id": "34",
@@ -306,7 +340,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e018" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e018"
+    },
     "id": "18",
     "home_team_id": "35",
     "away_team_id": "36",
@@ -324,7 +360,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e019" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e019"
+    },
     "id": "19",
     "home_team_id": "37",
     "away_team_id": "38",
@@ -342,7 +380,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e020" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e020"
+    },
     "id": "20",
     "home_team_id": "39",
     "away_team_id": "40",
@@ -360,7 +400,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e021" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e021"
+    },
     "id": "21",
     "home_team_id": "41",
     "away_team_id": "42",
@@ -378,7 +420,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e022" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e022"
+    },
     "id": "22",
     "home_team_id": "45",
     "away_team_id": "46",
@@ -396,7 +440,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e023" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e023"
+    },
     "id": "23",
     "home_team_id": "43",
     "away_team_id": "44",
@@ -414,7 +460,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e024" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e024"
+    },
     "id": "24",
     "home_team_id": "47",
     "away_team_id": "48",
@@ -432,7 +480,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e025" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e025"
+    },
     "id": "25",
     "home_team_id": "1",
     "away_team_id": "3",
@@ -450,7 +500,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e026" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e026"
+    },
     "id": "26",
     "home_team_id": "8",
     "away_team_id": "6",
@@ -468,7 +520,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e027" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e027"
+    },
     "id": "27",
     "home_team_id": "5",
     "away_team_id": "7",
@@ -486,7 +540,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e028" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e028"
+    },
     "id": "28",
     "home_team_id": "4",
     "away_team_id": "2",
@@ -504,7 +560,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e029" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e029"
+    },
     "id": "29",
     "home_team_id": "9",
     "away_team_id": "11",
@@ -522,7 +580,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e030" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e030"
+    },
     "id": "30",
     "home_team_id": "12",
     "away_team_id": "10",
@@ -540,7 +600,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e031" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e031"
+    },
     "id": "31",
     "home_team_id": "13",
     "away_team_id": "15",
@@ -558,7 +620,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e032" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e032"
+    },
     "id": "32",
     "home_team_id": "16",
     "away_team_id": "14",
@@ -576,7 +640,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e033" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e033"
+    },
     "id": "33",
     "home_team_id": "17",
     "away_team_id": "19",
@@ -594,7 +660,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e034" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e034"
+    },
     "id": "34",
     "home_team_id": "20",
     "away_team_id": "18",
@@ -612,7 +680,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e035" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e035"
+    },
     "id": "35",
     "home_team_id": "21",
     "away_team_id": "23",
@@ -630,7 +700,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e036" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e036"
+    },
     "id": "36",
     "home_team_id": "24",
     "away_team_id": "22",
@@ -648,7 +720,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e037" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e037"
+    },
     "id": "37",
     "home_team_id": "25",
     "away_team_id": "27",
@@ -666,7 +740,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e038" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e038"
+    },
     "id": "38",
     "home_team_id": "28",
     "away_team_id": "26",
@@ -684,7 +760,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e039" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e039"
+    },
     "id": "39",
     "home_team_id": "29",
     "away_team_id": "31",
@@ -702,7 +780,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e040" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e040"
+    },
     "id": "40",
     "home_team_id": "32",
     "away_team_id": "30",
@@ -720,7 +800,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e041" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e041"
+    },
     "id": "41",
     "home_team_id": "33",
     "away_team_id": "35",
@@ -738,7 +820,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e042" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e042"
+    },
     "id": "42",
     "home_team_id": "36",
     "away_team_id": "34",
@@ -756,7 +840,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e043" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e043"
+    },
     "id": "43",
     "home_team_id": "37",
     "away_team_id": "39",
@@ -774,7 +860,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e044" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e044"
+    },
     "id": "44",
     "home_team_id": "40",
     "away_team_id": "38",
@@ -792,7 +880,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e045" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e045"
+    },
     "id": "45",
     "home_team_id": "41",
     "away_team_id": "43",
@@ -810,7 +900,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e046" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e046"
+    },
     "id": "46",
     "home_team_id": "48",
     "away_team_id": "46",
@@ -828,7 +920,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e047" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e047"
+    },
     "id": "47",
     "home_team_id": "44",
     "away_team_id": "42",
@@ -846,7 +940,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e048" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e048"
+    },
     "id": "48",
     "home_team_id": "45",
     "away_team_id": "47",
@@ -864,7 +960,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e049" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e049"
+    },
     "id": "49",
     "home_team_id": "12",
     "away_team_id": "9",
@@ -882,7 +980,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e050" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e050"
+    },
     "id": "50",
     "home_team_id": "10",
     "away_team_id": "11",
@@ -900,7 +1000,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e051" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e051"
+    },
     "id": "51",
     "home_team_id": "2",
     "away_team_id": "3",
@@ -918,7 +1020,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e052" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e052"
+    },
     "id": "52",
     "home_team_id": "4",
     "away_team_id": "1",
@@ -936,7 +1040,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e053" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e053"
+    },
     "id": "53",
     "home_team_id": "6",
     "away_team_id": "7",
@@ -954,7 +1060,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e054" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e054"
+    },
     "id": "54",
     "home_team_id": "8",
     "away_team_id": "5",
@@ -972,7 +1080,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e055" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e055"
+    },
     "id": "55",
     "home_team_id": "18",
     "away_team_id": "19",
@@ -990,7 +1100,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e056" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e056"
+    },
     "id": "56",
     "home_team_id": "20",
     "away_team_id": "17",
@@ -1008,7 +1120,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e057" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e057"
+    },
     "id": "57",
     "home_team_id": "14",
     "away_team_id": "15",
@@ -1026,7 +1140,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e058" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e058"
+    },
     "id": "58",
     "home_team_id": "16",
     "away_team_id": "13",
@@ -1044,7 +1160,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e059" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e059"
+    },
     "id": "59",
     "home_team_id": "22",
     "away_team_id": "23",
@@ -1062,7 +1180,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e060" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e060"
+    },
     "id": "60",
     "home_team_id": "24",
     "away_team_id": "21",
@@ -1080,7 +1200,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e061" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e061"
+    },
     "id": "61",
     "home_team_id": "34",
     "away_team_id": "35",
@@ -1098,7 +1220,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e062" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e062"
+    },
     "id": "62",
     "home_team_id": "36",
     "away_team_id": "33",
@@ -1116,7 +1240,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e063" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e063"
+    },
     "id": "63",
     "home_team_id": "26",
     "away_team_id": "27",
@@ -1134,7 +1260,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e064" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e064"
+    },
     "id": "64",
     "home_team_id": "28",
     "away_team_id": "25",
@@ -1152,7 +1280,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e065" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e065"
+    },
     "id": "65",
     "home_team_id": "30",
     "away_team_id": "31",
@@ -1170,7 +1300,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e066" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e066"
+    },
     "id": "66",
     "home_team_id": "32",
     "away_team_id": "29",
@@ -1188,7 +1320,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e067" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e067"
+    },
     "id": "67",
     "home_team_id": "48",
     "away_team_id": "45",
@@ -1206,7 +1340,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e068" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e068"
+    },
     "id": "68",
     "home_team_id": "46",
     "away_team_id": "47",
@@ -1224,7 +1360,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e069" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e069"
+    },
     "id": "69",
     "home_team_id": "38",
     "away_team_id": "39",
@@ -1242,7 +1380,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e070" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e070"
+    },
     "id": "70",
     "home_team_id": "40",
     "away_team_id": "37",
@@ -1260,7 +1400,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e071" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e071"
+    },
     "id": "71",
     "home_team_id": "44",
     "away_team_id": "41",
@@ -1278,7 +1420,9 @@
     "type": "group"
   },
   {
-    "_id": { "$oid": "679c9c8a5749c4077500e072" },
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e072"
+    },
     "id": "72",
     "home_team_id": "42",
     "away_team_id": "43",
@@ -1294,5 +1438,709 @@
     "finished": "FALSE",
     "time_elapsed": "notstarted",
     "type": "group"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e073"
+    },
+    "id": "73",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/28/2026 12:00",
+    "persian_date": "1405-04-07 12:00",
+    "stadium_id": "16",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Runner-up Group A",
+    "away_team_label": "Runner-up Group B"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e074"
+    },
+    "id": "74",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/29/2026 16:30",
+    "persian_date": "1405-04-08 16:30",
+    "stadium_id": "9",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group E",
+    "away_team_label": "3rd Group A/B/C/D/F"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e075"
+    },
+    "id": "75",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/29/2026 19:00",
+    "persian_date": "1405-04-08 19:00",
+    "stadium_id": "3",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group F",
+    "away_team_label": "Runner-up Group C"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e076"
+    },
+    "id": "76",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/29/2026 12:00",
+    "persian_date": "1405-04-08 12:00",
+    "stadium_id": "5",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group C",
+    "away_team_label": "Runner-up Group F"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e077"
+    },
+    "id": "77",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/30/2026 17:00",
+    "persian_date": "1405-04-09 17:00",
+    "stadium_id": "11",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group I",
+    "away_team_label": "3rd Group C/D/F/G/H"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e078"
+    },
+    "id": "78",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/30/2026 12:00",
+    "persian_date": "1405-04-09 12:00",
+    "stadium_id": "4",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Runner-up Group E",
+    "away_team_label": "Runner-up Group I"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e079"
+    },
+    "id": "79",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "06/30/2026 19:00",
+    "persian_date": "1405-04-09 19:00",
+    "stadium_id": "1",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group A",
+    "away_team_label": "3rd Group C/E/F/H/I"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07a"
+    },
+    "id": "80",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/01/2026 12:00",
+    "persian_date": "1405-04-10 12:00",
+    "stadium_id": "7",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group L",
+    "away_team_label": "3rd Group E/H/I/J/K"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07b"
+    },
+    "id": "81",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/01/2026 17:00",
+    "persian_date": "1405-04-10 17:00",
+    "stadium_id": "15",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group D",
+    "away_team_label": "3rd Group B/E/F/I/J"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07c"
+    },
+    "id": "82",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/01/2026 13:00",
+    "persian_date": "1405-04-10 13:00",
+    "stadium_id": "14",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group G",
+    "away_team_label": "3rd Group A/E/H/I/J"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07d"
+    },
+    "id": "83",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/02/2026 19:00",
+    "persian_date": "1405-04-11 19:00",
+    "stadium_id": "12",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Runner-up Group K",
+    "away_team_label": "Runner-up Group L"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07e"
+    },
+    "id": "84",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/02/2026 12:00",
+    "persian_date": "1405-04-11 12:00",
+    "stadium_id": "16",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group H",
+    "away_team_label": "Runner-up Group J"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e07f"
+    },
+    "id": "85",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/02/2026 20:00",
+    "persian_date": "1405-04-11 20:00",
+    "stadium_id": "13",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group B",
+    "away_team_label": "3rd Group E/F/G/I/J"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e080"
+    },
+    "id": "86",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/03/2026 18:00",
+    "persian_date": "1405-04-12 18:00",
+    "stadium_id": "8",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group J",
+    "away_team_label": "Runner-up Group H"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e081"
+    },
+    "id": "87",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/03/2026 20:30",
+    "persian_date": "1405-04-12 20:30",
+    "stadium_id": "6",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Winner Group K",
+    "away_team_label": "3rd Group D/E/I/J/L"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e082"
+    },
+    "id": "88",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R32",
+    "matchday": "4",
+    "local_date": "07/03/2026 13:00",
+    "persian_date": "1405-04-12 13:00",
+    "stadium_id": "4",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r32",
+    "home_team_label": "Runner-up Group D",
+    "away_team_label": "Runner-up Group G"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e083"
+    },
+    "id": "89",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/04/2026 17:00",
+    "persian_date": "1405-04-13 17:00",
+    "stadium_id": "10",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 74",
+    "away_team_label": "Winner Match 77"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e084"
+    },
+    "id": "90",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/04/2026 12:00",
+    "persian_date": "1405-04-13 12:00",
+    "stadium_id": "5",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 73",
+    "away_team_label": "Winner Match 75"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e085"
+    },
+    "id": "91",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/05/2026 16:00",
+    "persian_date": "1405-04-14 16:00",
+    "stadium_id": "11",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 76",
+    "away_team_label": "Winner Match 78"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e086"
+    },
+    "id": "92",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/05/2026 18:00",
+    "persian_date": "1405-04-14 18:00",
+    "stadium_id": "1",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 79",
+    "away_team_label": "Winner Match 80"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e087"
+    },
+    "id": "93",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/06/2026 14:00",
+    "persian_date": "1405-04-15 14:00",
+    "stadium_id": "4",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 83",
+    "away_team_label": "Winner Match 84"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e088"
+    },
+    "id": "94",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/06/2026 17:00",
+    "persian_date": "1405-04-15 17:00",
+    "stadium_id": "14",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 81",
+    "away_team_label": "Winner Match 82"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e089"
+    },
+    "id": "95",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/07/2026 12:00",
+    "persian_date": "1405-04-16 12:00",
+    "stadium_id": "7",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 86",
+    "away_team_label": "Winner Match 88"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08a"
+    },
+    "id": "96",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "R16",
+    "matchday": "5",
+    "local_date": "07/07/2026 13:00",
+    "persian_date": "1405-04-16 13:00",
+    "stadium_id": "13",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "r16",
+    "home_team_label": "Winner Match 85",
+    "away_team_label": "Winner Match 87"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08b"
+    },
+    "id": "97",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "QF",
+    "matchday": "6",
+    "local_date": "07/09/2026 16:00",
+    "persian_date": "1405-04-18 16:00",
+    "stadium_id": "9",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "qf",
+    "home_team_label": "Winner Match 89",
+    "away_team_label": "Winner Match 90"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08c"
+    },
+    "id": "98",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "QF",
+    "matchday": "6",
+    "local_date": "07/10/2026 12:00",
+    "persian_date": "1405-04-19 12:00",
+    "stadium_id": "16",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "qf",
+    "home_team_label": "Winner Match 93",
+    "away_team_label": "Winner Match 94"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08d"
+    },
+    "id": "99",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "QF",
+    "matchday": "6",
+    "local_date": "07/11/2026 17:00",
+    "persian_date": "1405-04-20 17:00",
+    "stadium_id": "8",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "qf",
+    "home_team_label": "Winner Match 91",
+    "away_team_label": "Winner Match 92"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08e"
+    },
+    "id": "100",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "QF",
+    "matchday": "6",
+    "local_date": "07/11/2026 20:00",
+    "persian_date": "1405-04-20 20:00",
+    "stadium_id": "6",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "qf",
+    "home_team_label": "Winner Match 95",
+    "away_team_label": "Winner Match 96"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e08f"
+    },
+    "id": "101",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "SF",
+    "matchday": "7",
+    "local_date": "07/14/2026 14:00",
+    "persian_date": "1405-04-23 14:00",
+    "stadium_id": "4",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "sf",
+    "home_team_label": "Winner Match 97",
+    "away_team_label": "Winner Match 98"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e090"
+    },
+    "id": "102",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "SF",
+    "matchday": "7",
+    "local_date": "07/15/2026 15:00",
+    "persian_date": "1405-04-24 15:00",
+    "stadium_id": "7",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "sf",
+    "home_team_label": "Winner Match 99",
+    "away_team_label": "Winner Match 100"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e091"
+    },
+    "id": "103",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "3RD",
+    "matchday": "8",
+    "local_date": "07/18/2026 17:00",
+    "persian_date": "1405-04-27 17:00",
+    "stadium_id": "8",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "third",
+    "home_team_label": "Loser Match 101",
+    "away_team_label": "Loser Match 102"
+  },
+  {
+    "_id": {
+      "$oid": "679c9c8a5749c4077500e092"
+    },
+    "id": "104",
+    "home_team_id": "0",
+    "away_team_id": "0",
+    "home_score": "0",
+    "away_score": "0",
+    "home_scorers": "null",
+    "away_scorers": "null",
+    "group": "FINAL",
+    "matchday": "9",
+    "local_date": "07/19/2026 15:00",
+    "persian_date": "1405-04-28 15:00",
+    "stadium_id": "11",
+    "finished": "FALSE",
+    "time_elapsed": "notstarted",
+    "type": "final",
+    "home_team_label": "Winner Match 101",
+    "away_team_label": "Winner Match 102"
   }
 ]

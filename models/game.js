@@ -58,6 +58,14 @@ const GameSchema = new mongoose.Schema({
         type: String,
         default: "group"
     },
+    home_team_label: {
+        type: String,
+        default: ""
+    },
+    away_team_label: {
+        type: String,
+        default: ""
+    },
     homeTeam: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Team'

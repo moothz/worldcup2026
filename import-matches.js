@@ -49,12 +49,13 @@ async function importMatches() {
         for (const item of matchesData) {
             const homeTeamId = teamMap[item.home_team_id];
             const awayTeamId = teamMap[item.away_team_id];
-            
-            if (!homeTeamId || !awayTeamId) {
+            const isGroup = (item.type || 'group') === 'group';
+
+            if (isGroup && (!homeTeamId || !awayTeamId)) {
                 console.warn(`⚠️  Skipping match ${item.id}: Missing team mapping (home: ${item.home_team_id}, away: ${item.away_team_id})`);
                 continue;
             }
-            
+
             const gameData = {
                 id: item.id,
                 home_team_id: item.home_team_id,
@@ -71,8 +72,10 @@ async function importMatches() {
                 finished: item.finished,
                 time_elapsed: item.time_elapsed,
                 type: item.type,
-                homeTeam: homeTeamId,
-                visitingTeam: awayTeamId,
+                home_team_label: item.home_team_label || "",
+                away_team_label: item.away_team_label || "",
+                homeTeam: homeTeamId || null,
+                visitingTeam: awayTeamId || null,
                 date: new Date(item.local_date)
             };
             

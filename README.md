@@ -92,9 +92,10 @@ curl https://worldcup26.ir/get/stadiums
 | **Host Countries** | 🇺🇸 United States, 🇲🇽 Mexico, 🇨🇦 Canada |
 | **Teams** | 48 (expanded from 32) |
 | **Groups** | 12 (A through L) |
-| **Total Matches** | 104 |
+| **Total Matches** | 104 (72 group stage + 32 knockout) |
 | **Opening Match** | June 11, 2026 — Mexico City 🇲🇽 |
-| **Final** | July 19, 2026 — New Jersey 🇺🇸 |
+| **Round of 32 begins** | June 28, 2026 |
+| **Final** | July 19, 2026 — MetLife Stadium, East Rutherford 🇺🇸 |
 
 ---
 
@@ -484,9 +485,9 @@ Authorization: Bearer ${Token}
 ```
 | Parameter | Type | Description |
 |:----------|:-----|:------------|
-| `matchId` | `string` | **Required**. Match identifier |
+| `matchId` | `string` | **Required**. Match identifier (1–104) |
 
-**Response Example:**
+**Response Example (Group Match):**
 ```json
 {
   "id": "1",
@@ -496,12 +497,60 @@ Authorization: Bearer ${Token}
   "away_score": 0,
   "group": "A",
   "matchday": "1",
-  "local_date": "June 11, 2026",
+  "local_date": "06/11/2026 13:00",
+  "persian_date": "1405-03-21 13:00",
   "stadium_id": "1",
-  "finished": false,
-  "type": "group"
+  "finished": "FALSE",
+  "type": "group",
+  "home_team_label": "",
+  "away_team_label": ""
 }
 ```
+
+**Response Example (Knockout Match — teams TBD):**
+```json
+{
+  "id": "73",
+  "home_team_id": "0",
+  "away_team_id": "0",
+  "group": "R32",
+  "matchday": "4",
+  "local_date": "06/28/2026 12:00",
+  "persian_date": "1405-04-07 12:00",
+  "stadium_id": "16",
+  "finished": "FALSE",
+  "type": "r32",
+  "home_team_label": "Runner-up Group A",
+  "away_team_label": "Runner-up Group B"
+}
+```
+
+##### Tournament Stages
+
+The `type` field identifies the stage of each match. For knockout matches before the bracket is filled in, opponents are referenced through the `home_team_label` / `away_team_label` placeholder fields (e.g. `"Winner Group A"`, `"3rd Group C/D/F/G/H"`, `"Winner Match 73"`, `"Loser Match 101"`). Once the opposing teams are determined, update `home_team_id` and `away_team_id` accordingly.
+
+| `type` | `group` | `matchday` | Stage | Matches | IDs |
+|--------|---------|------------|-------|---------|-----|
+| `group` | A–L | 1–3 | Group stage | 72 | 1–72 |
+| `r32`   | R32   | 4 | Round of 32 | 16 | 73–88 |
+| `r16`   | R16   | 5 | Round of 16 | 8  | 89–96 |
+| `qf`    | QF    | 6 | Quarterfinals | 4 | 97–100 |
+| `sf`    | SF    | 7 | Semifinals | 2 | 101–102 |
+| `third` | 3RD   | 8 | Match for third place | 1 | 103 |
+| `final` | FINAL | 9 | Final | 1 | 104 |
+
+**Knockout Stage Schedule:**
+
+| Stage | Dates | Venues |
+|-------|-------|--------|
+| Round of 32 | June 28 – July 3, 2026 | 13 stadiums across US, Mexico & Canada |
+| Round of 16 | July 4 – 7, 2026 | 8 stadiums |
+| Quarterfinals | July 9 – 11, 2026 | Foxborough, Inglewood, Miami Gardens, Kansas City |
+| Semifinals | July 14 – 15, 2026 | Arlington, Atlanta |
+| Third place | July 18, 2026 | Hard Rock Stadium, Miami Gardens |
+| **Final** | **July 19, 2026** | **MetLife Stadium, East Rutherford** |
+
+> 📌 Source: [Wikipedia — 2026 FIFA World Cup](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup)
 
 ---
 
