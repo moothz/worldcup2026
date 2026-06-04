@@ -1,3 +1,17 @@
+# ⚽ FIFA World Cup 2026 API (Fork)
+
+> **⚠️ Disclaimer:** This is a fork of the [original project](https://github.com/rezarahiminia/worldcup2026) with added **local mirroring capabilities**. It is specifically configured to keep data in sync with the live API and optimized for use with [**ravena-ai**](https://github.com/moothz/ravena-ai).
+> 
+> 🌐 **Live Fork URL:** [https://wc2026.moothz.win](https://wc2026.moothz.win)
+> 📖 **Fork API Docs:** [https://wc2026.moothz.win/api-docs/](https://wc2026.moothz.win/api-docs/)
+
+### 🛠️ Fork Improvements
+- **Live Sync Service**: Includes `sync-live-data.js` to automatically mirror scores and standings from the upstream API every 5 minutes.
+- **Automation**: Custom `update-from-upstream.sh` script to pull updates, re-apply local patches, and restart services.
+- **PM2 Ready**: Pre-configured `ecosystem.config.js` for managing both the API and the sync service.
+
+---
+
 # ⚽ FIFA World Cup 2026 API — Free Open-Source REST API with Live Scores
 
 <!-- GitHub Visitor Counter -->
@@ -9,7 +23,7 @@
 [![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-orange?logo=swagger)](https://swagger.io/)
 [![License](https://img.shields.io/badge/License-ISC-blue.svg)](LICENSE)
 [![API Version](https://img.shields.io/badge/API%20Version-1.0.5-blue)]()
-[![API Status](https://img.shields.io/badge/API-Live-brightgreen)](https://worldcup26.ir)
+[![API Status](https://img.shields.io/badge/API-Live-brightgreen)](https://wc2026.moothz.win)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/rezarahiminia/worldcup2026/pulls)
 
 > 🏆 **The first-ever 48-team FIFA World Cup — Free REST API with live scores, 104 matches, 16 stadiums, 12 groups, and real-time updates. No API key required for read access.**
@@ -33,19 +47,19 @@ A comprehensive, **free and open-source** REST API providing real-time data for 
 
 ```bash
 # Get all World Cup 2026 matches (no auth needed for demo)
-curl https://worldcup26.ir/get/games
+curl https://wc2026.moothz.win/get/games
 
 # Get group standings
-curl https://worldcup26.ir/get/groups
+curl https://wc2026.moothz.win/get/groups
 
 # Get all 48 teams
-curl https://worldcup26.ir/get/teams
+curl https://wc2026.moothz.win/get/teams
 
 # Get all 16 stadiums
-curl https://worldcup26.ir/get/stadiums
+curl https://wc2026.moothz.win/get/stadiums
 ```
 
-> 📖 **Full documentation:** [worldcup26.ir/api-docs](https://worldcup26.ir/api-docs/)
+> 📖 **Full documentation:** [wc2026.moothz.win/api-docs](https://wc2026.moothz.win/api-docs/)
 
 ---
 
@@ -246,7 +260,7 @@ This API includes full **interactive Swagger UI** documentation powered by OpenA
 | **Swagger Version** | OpenAPI 3.0 (`swagger-jsdoc` 6.x + `swagger-ui-express` 5.x) |
 | **API Version** | 1.0.5 |
 | **Dev URL** | [http://localhost:3050/api-docs/](http://localhost:3050/api-docs/) |
-| **Production (HTTPS)** | [https://worldcup26.ir/api-docs/](https://worldcup26.ir/api-docs/) |
+| **Production (HTTPS)** | [https://wc2026.moothz.win/api-docs/](https://wc2026.moothz.win/api-docs/) |
 
 ### How to Use Swagger UI
 
@@ -360,7 +374,7 @@ After successful login/registration, use the returned token for all API requests
 
 ```javascript
 // Example using fetch
-fetch('https://worldcup26.ir/get/teams', {
+fetch('https://wc2026.moothz.win/get/teams', {
   headers: {
     'Authorization': 'Bearer YOUR_JWT_TOKEN'
   }
@@ -370,7 +384,7 @@ fetch('https://worldcup26.ir/get/teams', {
 ```bash
 # Example using cURL
 curl -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  https://worldcup26.ir/get/teams
+  https://wc2026.moothz.win/get/teams
 ```
 
 > ⏰ **Token Expiry:** Tokens are valid for **84 days** (7,257,600 seconds). After expiration, you'll need to login again.
@@ -727,8 +741,8 @@ This project is licensed under the ISC License — see the [LICENSE](LICENSE) fi
 
 ## 🔗 Related Links
 
-- 🌐 [Live Website](https://worldcup26.ir)
-- 📖 [API Swagger Docs](https://worldcup26.ir/api-docs/)
+- 🌐 [Live Website](https://wc2026.moothz.win)
+- 📖 [API Swagger Docs](https://wc2026.moothz.win/api-docs/)
 - 💻 [GitHub Repository](https://github.com/rezarahiminia/worldcup2026)
 - 🌐 [FIFA Official Website](https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026)
 - 🏆 [World Cup 2026 Official](https://www.fifa.com/worldcup/)
@@ -759,7 +773,7 @@ This API is completely **free and open-source**. If you find it useful, consider
 
 ---
 
-## �📧 Contact & Support
+## 📧 Contact & Support
 
 For questions, issues, or suggestions, please open an issue on GitHub.
 
