@@ -23,11 +23,11 @@ const options = {
         description: 'Development server'
       },
       {
-        url: 'http://worldcup26.ir:3050',
+        url: 'http://wc2026.moothz.win:3050',
         description: 'Production server'
       },
       {
-        url: 'https://worldcup26.ir',
+        url: 'https://wc2026.moothz.win',
         description: 'Production server (HTTPS)'
       }
     ],

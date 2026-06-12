@@ -10,4 +10,4 @@ Disallow: /health
 Disallow: /api-docs
 
 # Sitemap
-Sitemap: https://worldcup26.ir/sitemap.xml
+Sitemap: https://wc2026.moothz.win/sitemap.xml

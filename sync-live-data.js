@@ -40,6 +40,61 @@ function formatTimeDiff(ms) {
     return parts.join(', ');
 }
 
+// URL of the Ravena Bot API
+const RAVENA_API_URL = process.env.RAVENA_API_URL || 'http://localhost:5000';
+
+/**
+ * Sends a game event to the Ravena Bot API /copa endpoint
+ */
+async function notifyCopa(event, match, goalDetails = null) {
+    try {
+        await axios.post(`${RAVENA_API_URL}/copa`, {
+            event,
+            match: {
+                id: match.id,
+                home_team_id: match.home_team_id,
+                away_team_id: match.away_team_id,
+                home_team_name_en: match.home_team_name_en,
+                away_team_name_en: match.away_team_name_en,
+                home_score: match.home_score,
+                away_score: match.away_score,
+                finished: match.finished,
+                time_elapsed: match.time_elapsed,
+                stadium_id: match.stadium_id,
+                type: match.type,
+                group: match.group
+            },
+            goalDetails
+        }, { timeout: 5000 });
+        console.log(`📡 Event '${event}' successfully sent to Ravena bot.`);
+    } catch (err) {
+        console.error(`⚠️ Failed to notify Ravena bot about event '${event}':`, err.message);
+    }
+}
+
+/**
+ * Helper to identify the scorer name from scorers difference
+ */
+function findNewScorer(oldScorers, newScorers) {
+    if (!newScorers) return null;
+    
+    const parseScorers = (val) => {
+        if (Array.isArray(val)) return val.map(x => typeof x === 'object' ? (x.name || x.player) : String(x));
+        if (typeof val === 'string') return val.split(',').map(s => s.trim());
+        return [];
+    };
+
+    const oldList = parseScorers(oldScorers);
+    const newList = parseScorers(newScorers);
+
+    for (const name of newList) {
+        if (!oldList.includes(name)) {
+            return name;
+        }
+    }
+    return newList[newList.length - 1] || null;
+}
+
 async function syncGames() {
     try {
         console.log('🔄 Fetching live games data...');
@@ -55,7 +110,83 @@ async function syncGames() {
         let nextGameDate = null;
         const now = new Date();
 
-        for (const liveGame of liveGames) {
+        for (let i = 0; i < liveGames.length; i++) {
+            let liveGame = liveGames[i];
+            let shouldFetchDetail = false;
+
+            // Status Logic
+            if (liveGame.finished === "FALSE") {
+                const matchTime = parseDate(liveGame.local_date);
+                const timeDiff = matchTime - now;
+                
+                // If match is starting soon or currently in progress
+                // We fetch details for any match that hasn't finished and is within the buffer or already started
+                if (liveGame.time_elapsed !== "notstarted" || timeDiff <= PRE_GAME_BUFFER) {
+                    isGameLiveOrSoon = true;
+                    shouldFetchDetail = true;
+                }
+                
+                // Track earliest upcoming game for countdown
+                if (timeDiff > 0 && (!nextGameDate || matchTime < nextGameDate)) {
+                    nextGameDate = matchTime;
+                }
+            }
+
+            if (shouldFetchDetail) {
+                try {
+                    console.log(`📡 Fetching realtime detail for match ${liveGame.id} (${liveGame._id})...`);
+                    const detailRes = await axios.get(`${LIVE_API_BASE}/get/game/${liveGame._id}`);
+                    const detailData = detailRes.data.game || detailRes.data;
+                    
+                    if (detailData && detailData.id) {
+                        // Merge detail into liveGames array to ensure it's saved to JSON
+                        liveGames[i] = { ...liveGame, ...detailData };
+                        liveGame = liveGames[i];
+                    }
+                } catch (err) {
+                    console.error(`⚠️ Failed to fetch detail for match ${liveGame.id}:`, err.message);
+                }
+            }
+
+            // Fetch previous game state from DB to compare and detect transitions
+            const oldGame = await Game.findOne({ id: liveGame.id });
+
+            if (oldGame) {
+                // 1. Detect Match Start (transitions from 'notstarted' to active)
+                if (oldGame.time_elapsed === "notstarted" && liveGame.time_elapsed !== "notstarted" && liveGame.finished !== "TRUE") {
+                    await notifyCopa("match_start", liveGame);
+                }
+
+                // 2. Detect Goals (scores increased)
+                const oldHomeScore = Number(oldGame.home_score) || 0;
+                const newHomeScore = Number(liveGame.home_score) || 0;
+                const oldAwayScore = Number(oldGame.away_score) || 0;
+                const newAwayScore = Number(liveGame.away_score) || 0;
+
+                if (newHomeScore > oldHomeScore) {
+                    const scorer = findNewScorer(oldGame.home_scorers, liveGame.home_scorers);
+                    await notifyCopa("goal", liveGame, {
+                        scoringTeamId: liveGame.home_team_id,
+                        scoringTeamNameEn: liveGame.home_team_name_en,
+                        player: scorer || "",
+                        minute: liveGame.time_elapsed
+                    });
+                } else if (newAwayScore > oldAwayScore) {
+                    const scorer = findNewScorer(oldGame.away_scorers, liveGame.away_scorers);
+                    await notifyCopa("goal", liveGame, {
+                        scoringTeamId: liveGame.away_team_id,
+                        scoringTeamNameEn: liveGame.away_team_name_en,
+                        player: scorer || "",
+                        minute: liveGame.time_elapsed
+                    });
+                }
+
+                // 3. Detect Match End (transitions to finished)
+                if (oldGame.finished !== "TRUE" && liveGame.finished === "TRUE") {
+                    await notifyCopa("match_end", liveGame);
+                }
+            }
+
             // Update database
             const result = await Game.updateOne(
                 { id: liveGame.id },
@@ -74,25 +205,6 @@ async function syncGames() {
             if (result.modifiedCount > 0) {
                 updatedCount++;
                 console.log(`✅ Updated match ${liveGame.id}: ${liveGame.home_team_name_en} ${liveGame.home_score} - ${liveGame.away_score} ${liveGame.away_team_name_en}`);
-            }
-
-            // Status Logic
-            if (liveGame.finished === "FALSE") {
-                const matchTime = parseDate(liveGame.local_date);
-                
-                if (liveGame.time_elapsed !== "notstarted") {
-                    isGameLiveOrSoon = true;
-                } else {
-                    const timeDiff = matchTime - now;
-                    // Buffer Check
-                    if (timeDiff > 0 && timeDiff <= PRE_GAME_BUFFER) {
-                        isGameLiveOrSoon = true;
-                    }
-                    // Track earliest upcoming game for countdown
-                    if (timeDiff > 0 && (!nextGameDate || matchTime < nextGameDate)) {
-                        nextGameDate = matchTime;
-                    }
-                }
             }
         }
         

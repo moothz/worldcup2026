@@ -16,48 +16,48 @@ module.exports = (app) => {
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://worldcup26.ir/</loc>
+    <loc>https://wc2026.moothz.win/</loc>
     <lastmod>${now}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://worldcup26.ir/?lang=fa"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://worldcup26.ir/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldcup26.ir/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://wc2026.moothz.win/?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wc2026.moothz.win/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wc2026.moothz.win/"/>
   </url>
 
   <url>
-    <loc>https://worldcup26.ir/?lang=en</loc>
+    <loc>https://wc2026.moothz.win/?lang=en</loc>
     <lastmod>${now}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://worldcup26.ir/?lang=fa"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://worldcup26.ir/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://worldcup26.ir/"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://wc2026.moothz.win/?lang=fa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wc2026.moothz.win/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://wc2026.moothz.win/"/>
   </url>
 
   <url>
-    <loc>https://worldcup26.ir/#matches</loc>
+    <loc>https://wc2026.moothz.win/#matches</loc>
     <lastmod>${now}</lastmod>
     <changefreq>hourly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://worldcup26.ir/#groups</loc>
+    <loc>https://wc2026.moothz.win/#groups</loc>
     <lastmod>${now}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://worldcup26.ir/#teams</loc>
+    <loc>https://wc2026.moothz.win/#teams</loc>
     <lastmod>${now}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://worldcup26.ir/#stadiums</loc>
+    <loc>https://wc2026.moothz.win/#stadiums</loc>
     <lastmod>${now}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -1,28 +1,28 @@
 [
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e001"
-    },
+    "_id": "679c9c8a5749c4077500e001",
     "id": "1",
     "home_team_id": "1",
     "away_team_id": "2",
-    "home_score": "0",
+    "home_score": "2",
     "away_score": "0",
-    "home_scorers": "null",
+    "home_scorers": "{“J. Quiñones 9'”,”R. Jiménez 67'”}",
     "away_scorers": "null",
     "group": "A",
     "matchday": "1",
     "local_date": "06/11/2026 13:00",
     "persian_date": "1405-03-21 13:00",
     "stadium_id": "1",
-    "finished": "FALSE",
-    "time_elapsed": "notstarted",
-    "type": "group"
+    "finished": "TRUE",
+    "time_elapsed": "finished",
+    "type": "group",
+    "home_team_name_en": "Mexico",
+    "home_team_name_fa": "مکزیک",
+    "away_team_name_en": "South Africa",
+    "away_team_name_fa": "آفریقای جنوبی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e002"
-    },
+    "_id": "679c9c8a5749c4077500e002",
     "id": "2",
     "home_team_id": "3",
     "away_team_id": "4",
@@ -37,12 +37,14 @@
     "stadium_id": "2",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "South Korea",
+    "home_team_name_fa": "کره جنوبی",
+    "away_team_name_en": "Czech Republic",
+    "away_team_name_fa": "جمهوری چک"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e003"
-    },
+    "_id": "679c9c8a5749c4077500e003",
     "id": "3",
     "home_team_id": "5",
     "away_team_id": "6",
@@ -57,12 +59,14 @@
     "stadium_id": "12",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Canada",
+    "home_team_name_fa": "کانادا",
+    "away_team_name_en": "Bosnia and Herzegovina",
+    "away_team_name_fa": "بوسنی و هرزگوین"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e004"
-    },
+    "_id": "679c9c8a5749c4077500e004",
     "id": "4",
     "home_team_id": "13",
     "away_team_id": "14",
@@ -77,12 +81,14 @@
     "stadium_id": "16",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "United States",
+    "home_team_name_fa": "آمریکا",
+    "away_team_name_en": "Paraguay",
+    "away_team_name_fa": "پاراگوئه"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e005"
-    },
+    "_id": "679c9c8a5749c4077500e005",
     "id": "5",
     "home_team_id": "11",
     "away_team_id": "12",
@@ -97,12 +103,14 @@
     "stadium_id": "9",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Haiti",
+    "home_team_name_fa": "هائیتی",
+    "away_team_name_en": "Scotland",
+    "away_team_name_fa": "اسکاتلند"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e006"
-    },
+    "_id": "679c9c8a5749c4077500e006",
     "id": "6",
     "home_team_id": "15",
     "away_team_id": "16",
@@ -117,12 +125,14 @@
     "stadium_id": "13",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Australia",
+    "home_team_name_fa": "استرالیا",
+    "away_team_name_en": "Turkey",
+    "away_team_name_fa": "ترکیه"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e007"
-    },
+    "_id": "679c9c8a5749c4077500e007",
     "id": "7",
     "home_team_id": "9",
     "away_team_id": "10",
@@ -137,12 +147,14 @@
     "stadium_id": "11",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Brazil",
+    "home_team_name_fa": "برزیل",
+    "away_team_name_en": "Morocco",
+    "away_team_name_fa": "مراکش"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e008"
-    },
+    "_id": "679c9c8a5749c4077500e008",
     "id": "8",
     "home_team_id": "7",
     "away_team_id": "8",
@@ -157,12 +169,14 @@
     "stadium_id": "15",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Qatar",
+    "home_team_name_fa": "قطر",
+    "away_team_name_en": "Switzerland",
+    "away_team_name_fa": "سوئیس"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e009"
-    },
+    "_id": "679c9c8a5749c4077500e009",
     "id": "9",
     "home_team_id": "19",
     "away_team_id": "20",
@@ -177,12 +191,14 @@
     "stadium_id": "10",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Ivory Coast",
+    "home_team_name_fa": "ساحل عاج",
+    "away_team_name_en": "Ecuador",
+    "away_team_name_fa": "اکوادور"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e010"
-    },
+    "_id": "679c9c8a5749c4077500e010",
     "id": "10",
     "home_team_id": "17",
     "away_team_id": "18",
@@ -197,12 +213,14 @@
     "stadium_id": "5",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Germany",
+    "home_team_name_fa": "آلمان",
+    "away_team_name_en": "Curaçao",
+    "away_team_name_fa": "کوراسائو"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e011"
-    },
+    "_id": "679c9c8a5749c4077500e011",
     "id": "11",
     "home_team_id": "21",
     "away_team_id": "22",
@@ -217,12 +235,14 @@
     "stadium_id": "4",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Netherlands",
+    "home_team_name_fa": "هلند",
+    "away_team_name_en": "Japan",
+    "away_team_name_fa": "ژاپن"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e012"
-    },
+    "_id": "679c9c8a5749c4077500e012",
     "id": "12",
     "home_team_id": "23",
     "away_team_id": "24",
@@ -237,12 +257,14 @@
     "stadium_id": "3",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Sweden",
+    "home_team_name_fa": "سوئد",
+    "away_team_name_en": "Tunisia",
+    "away_team_name_fa": "تونس"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e013"
-    },
+    "_id": "679c9c8a5749c4077500e013",
     "id": "13",
     "home_team_id": "27",
     "away_team_id": "28",
@@ -257,12 +279,14 @@
     "stadium_id": "16",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Iran",
+    "home_team_name_fa": "ایران",
+    "away_team_name_en": "New Zealand",
+    "away_team_name_fa": "نیوزیلند"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e014"
-    },
+    "_id": "679c9c8a5749c4077500e014",
     "id": "14",
     "home_team_id": "29",
     "away_team_id": "30",
@@ -277,12 +301,14 @@
     "stadium_id": "7",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Spain",
+    "home_team_name_fa": "اسپانیا",
+    "away_team_name_en": "Cape Verde",
+    "away_team_name_fa": "کیپ ورد"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e015"
-    },
+    "_id": "679c9c8a5749c4077500e015",
     "id": "15",
     "home_team_id": "25",
     "away_team_id": "26",
@@ -297,12 +323,14 @@
     "stadium_id": "14",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Belgium",
+    "home_team_name_fa": "بلژیک",
+    "away_team_name_en": "Egypt",
+    "away_team_name_fa": "مصر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e016"
-    },
+    "_id": "679c9c8a5749c4077500e016",
     "id": "16",
     "home_team_id": "31",
     "away_team_id": "32",
@@ -317,12 +345,14 @@
     "stadium_id": "8",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Saudi Arabia",
+    "home_team_name_fa": "عربستان",
+    "away_team_name_en": "Uruguay",
+    "away_team_name_fa": "اروگوئه"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e017"
-    },
+    "_id": "679c9c8a5749c4077500e017",
     "id": "17",
     "home_team_id": "33",
     "away_team_id": "34",
@@ -337,12 +367,14 @@
     "stadium_id": "11",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "France",
+    "home_team_name_fa": "فرانسه",
+    "away_team_name_en": "Senegal",
+    "away_team_name_fa": "سنگال"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e018"
-    },
+    "_id": "679c9c8a5749c4077500e018",
     "id": "18",
     "home_team_id": "35",
     "away_team_id": "36",
@@ -357,12 +389,14 @@
     "stadium_id": "9",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Iraq",
+    "home_team_name_fa": "عراق",
+    "away_team_name_en": "Norway",
+    "away_team_name_fa": "نروژ"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e019"
-    },
+    "_id": "679c9c8a5749c4077500e019",
     "id": "19",
     "home_team_id": "37",
     "away_team_id": "38",
@@ -377,12 +411,14 @@
     "stadium_id": "6",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Argentina",
+    "home_team_name_fa": "آرژانتین",
+    "away_team_name_en": "Algeria",
+    "away_team_name_fa": "الجزایر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e020"
-    },
+    "_id": "679c9c8a5749c4077500e020",
     "id": "20",
     "home_team_id": "39",
     "away_team_id": "40",
@@ -397,12 +433,14 @@
     "stadium_id": "15",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Austria",
+    "home_team_name_fa": "اتریش",
+    "away_team_name_en": "Jordan",
+    "away_team_name_fa": "اردن"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e021"
-    },
+    "_id": "679c9c8a5749c4077500e021",
     "id": "21",
     "home_team_id": "41",
     "away_team_id": "42",
@@ -417,12 +455,14 @@
     "stadium_id": "5",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Portugal",
+    "home_team_name_fa": "پرتغال",
+    "away_team_name_en": "Democratic Republic of the Congo",
+    "away_team_name_fa": "جمهوری دموکراتیک کنگو"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e022"
-    },
+    "_id": "679c9c8a5749c4077500e022",
     "id": "22",
     "home_team_id": "45",
     "away_team_id": "46",
@@ -437,12 +477,14 @@
     "stadium_id": "4",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "England",
+    "home_team_name_fa": "انگلستان",
+    "away_team_name_en": "Croatia",
+    "away_team_name_fa": "کرواسی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e023"
-    },
+    "_id": "679c9c8a5749c4077500e023",
     "id": "23",
     "home_team_id": "43",
     "away_team_id": "44",
@@ -457,12 +499,14 @@
     "stadium_id": "1",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Uzbekistan",
+    "home_team_name_fa": "ازبکستان",
+    "away_team_name_en": "Colombia",
+    "away_team_name_fa": "کلمبیا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e024"
-    },
+    "_id": "679c9c8a5749c4077500e024",
     "id": "24",
     "home_team_id": "47",
     "away_team_id": "48",
@@ -477,12 +521,14 @@
     "stadium_id": "12",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Ghana",
+    "home_team_name_fa": "غنا",
+    "away_team_name_en": "Panama",
+    "away_team_name_fa": "پاناما"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e025"
-    },
+    "_id": "679c9c8a5749c4077500e025",
     "id": "25",
     "home_team_id": "1",
     "away_team_id": "3",
@@ -497,12 +543,14 @@
     "stadium_id": "2",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Mexico",
+    "home_team_name_fa": "مکزیک",
+    "away_team_name_en": "South Korea",
+    "away_team_name_fa": "کره جنوبی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e026"
-    },
+    "_id": "679c9c8a5749c4077500e026",
     "id": "26",
     "home_team_id": "8",
     "away_team_id": "6",
@@ -517,12 +565,14 @@
     "stadium_id": "16",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Switzerland",
+    "home_team_name_fa": "سوئیس",
+    "away_team_name_en": "Bosnia and Herzegovina",
+    "away_team_name_fa": "بوسنی و هرزگوین"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e027"
-    },
+    "_id": "679c9c8a5749c4077500e027",
     "id": "27",
     "home_team_id": "5",
     "away_team_id": "7",
@@ -537,12 +587,14 @@
     "stadium_id": "13",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Canada",
+    "home_team_name_fa": "کانادا",
+    "away_team_name_en": "Qatar",
+    "away_team_name_fa": "قطر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e028"
-    },
+    "_id": "679c9c8a5749c4077500e028",
     "id": "28",
     "home_team_id": "4",
     "away_team_id": "2",
@@ -557,12 +609,14 @@
     "stadium_id": "7",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Czech Republic",
+    "home_team_name_fa": "جمهوری چک",
+    "away_team_name_en": "South Africa",
+    "away_team_name_fa": "آفریقای جنوبی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e029"
-    },
+    "_id": "679c9c8a5749c4077500e029",
     "id": "29",
     "home_team_id": "9",
     "away_team_id": "11",
@@ -577,12 +631,14 @@
     "stadium_id": "10",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Brazil",
+    "home_team_name_fa": "برزیل",
+    "away_team_name_en": "Haiti",
+    "away_team_name_fa": "هائیتی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e030"
-    },
+    "_id": "679c9c8a5749c4077500e030",
     "id": "30",
     "home_team_id": "12",
     "away_team_id": "10",
@@ -597,12 +653,14 @@
     "stadium_id": "9",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Scotland",
+    "home_team_name_fa": "اسکاتلند",
+    "away_team_name_en": "Morocco",
+    "away_team_name_fa": "مراکش"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e031"
-    },
+    "_id": "679c9c8a5749c4077500e031",
     "id": "31",
     "home_team_id": "13",
     "away_team_id": "15",
@@ -617,12 +675,14 @@
     "stadium_id": "14",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "United States",
+    "home_team_name_fa": "آمریکا",
+    "away_team_name_en": "Australia",
+    "away_team_name_fa": "استرالیا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e032"
-    },
+    "_id": "679c9c8a5749c4077500e032",
     "id": "32",
     "home_team_id": "16",
     "away_team_id": "14",
@@ -637,12 +697,14 @@
     "stadium_id": "15",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Turkey",
+    "home_team_name_fa": "ترکیه",
+    "away_team_name_en": "Paraguay",
+    "away_team_name_fa": "پاراگوئه"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e033"
-    },
+    "_id": "679c9c8a5749c4077500e033",
     "id": "33",
     "home_team_id": "17",
     "away_team_id": "19",
@@ -657,12 +719,14 @@
     "stadium_id": "12",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Germany",
+    "home_team_name_fa": "آلمان",
+    "away_team_name_en": "Ivory Coast",
+    "away_team_name_fa": "ساحل عاج"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e034"
-    },
+    "_id": "679c9c8a5749c4077500e034",
     "id": "34",
     "home_team_id": "20",
     "away_team_id": "18",
@@ -677,12 +741,14 @@
     "stadium_id": "6",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Ecuador",
+    "home_team_name_fa": "اکوادور",
+    "away_team_name_en": "Curaçao",
+    "away_team_name_fa": "کوراسائو"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e035"
-    },
+    "_id": "679c9c8a5749c4077500e035",
     "id": "35",
     "home_team_id": "21",
     "away_team_id": "23",
@@ -697,12 +763,14 @@
     "stadium_id": "5",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Netherlands",
+    "home_team_name_fa": "هلند",
+    "away_team_name_en": "Sweden",
+    "away_team_name_fa": "سوئد"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e036"
-    },
+    "_id": "679c9c8a5749c4077500e036",
     "id": "36",
     "home_team_id": "24",
     "away_team_id": "22",
@@ -717,12 +785,14 @@
     "stadium_id": "3",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Tunisia",
+    "home_team_name_fa": "تونس",
+    "away_team_name_en": "Japan",
+    "away_team_name_fa": "ژاپن"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e037"
-    },
+    "_id": "679c9c8a5749c4077500e037",
     "id": "37",
     "home_team_id": "25",
     "away_team_id": "27",
@@ -737,12 +807,14 @@
     "stadium_id": "16",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Belgium",
+    "home_team_name_fa": "بلژیک",
+    "away_team_name_en": "Iran",
+    "away_team_name_fa": "ایران"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e038"
-    },
+    "_id": "679c9c8a5749c4077500e038",
     "id": "38",
     "home_team_id": "28",
     "away_team_id": "26",
@@ -757,12 +829,14 @@
     "stadium_id": "13",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "New Zealand",
+    "home_team_name_fa": "نیوزیلند",
+    "away_team_name_en": "Egypt",
+    "away_team_name_fa": "مصر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e039"
-    },
+    "_id": "679c9c8a5749c4077500e039",
     "id": "39",
     "home_team_id": "29",
     "away_team_id": "31",
@@ -777,12 +851,14 @@
     "stadium_id": "7",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Spain",
+    "home_team_name_fa": "اسپانیا",
+    "away_team_name_en": "Saudi Arabia",
+    "away_team_name_fa": "عربستان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e040"
-    },
+    "_id": "679c9c8a5749c4077500e040",
     "id": "40",
     "home_team_id": "32",
     "away_team_id": "30",
@@ -797,12 +873,14 @@
     "stadium_id": "8",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Uruguay",
+    "home_team_name_fa": "اروگوئه",
+    "away_team_name_en": "Cape Verde",
+    "away_team_name_fa": "کیپ ورد"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e041"
-    },
+    "_id": "679c9c8a5749c4077500e041",
     "id": "41",
     "home_team_id": "33",
     "away_team_id": "35",
@@ -817,12 +895,14 @@
     "stadium_id": "10",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "France",
+    "home_team_name_fa": "فرانسه",
+    "away_team_name_en": "Iraq",
+    "away_team_name_fa": "عراق"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e042"
-    },
+    "_id": "679c9c8a5749c4077500e042",
     "id": "42",
     "home_team_id": "36",
     "away_team_id": "34",
@@ -837,12 +917,14 @@
     "stadium_id": "11",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Norway",
+    "home_team_name_fa": "نروژ",
+    "away_team_name_en": "Senegal",
+    "away_team_name_fa": "سنگال"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e043"
-    },
+    "_id": "679c9c8a5749c4077500e043",
     "id": "43",
     "home_team_id": "37",
     "away_team_id": "39",
@@ -857,12 +939,14 @@
     "stadium_id": "4",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Argentina",
+    "home_team_name_fa": "آرژانتین",
+    "away_team_name_en": "Austria",
+    "away_team_name_fa": "اتریش"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e044"
-    },
+    "_id": "679c9c8a5749c4077500e044",
     "id": "44",
     "home_team_id": "40",
     "away_team_id": "38",
@@ -877,12 +961,14 @@
     "stadium_id": "15",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Jordan",
+    "home_team_name_fa": "اردن",
+    "away_team_name_en": "Algeria",
+    "away_team_name_fa": "الجزایر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e045"
-    },
+    "_id": "679c9c8a5749c4077500e045",
     "id": "45",
     "home_team_id": "41",
     "away_team_id": "43",
@@ -897,12 +983,14 @@
     "stadium_id": "5",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Portugal",
+    "home_team_name_fa": "پرتغال",
+    "away_team_name_en": "Uzbekistan",
+    "away_team_name_fa": "ازبکستان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e046"
-    },
+    "_id": "679c9c8a5749c4077500e046",
     "id": "46",
     "home_team_id": "48",
     "away_team_id": "46",
@@ -917,12 +1005,14 @@
     "stadium_id": "12",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Panama",
+    "home_team_name_fa": "پاناما",
+    "away_team_name_en": "Croatia",
+    "away_team_name_fa": "کرواسی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e047"
-    },
+    "_id": "679c9c8a5749c4077500e047",
     "id": "47",
     "home_team_id": "44",
     "away_team_id": "42",
@@ -937,12 +1027,14 @@
     "stadium_id": "2",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Colombia",
+    "home_team_name_fa": "کلمبیا",
+    "away_team_name_en": "Democratic Republic of the Congo",
+    "away_team_name_fa": "جمهوری دموکراتیک کنگو"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e048"
-    },
+    "_id": "679c9c8a5749c4077500e048",
     "id": "48",
     "home_team_id": "45",
     "away_team_id": "47",
@@ -957,12 +1049,14 @@
     "stadium_id": "9",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "England",
+    "home_team_name_fa": "انگلستان",
+    "away_team_name_en": "Ghana",
+    "away_team_name_fa": "غنا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e049"
-    },
+    "_id": "679c9c8a5749c4077500e049",
     "id": "49",
     "home_team_id": "12",
     "away_team_id": "9",
@@ -977,12 +1071,14 @@
     "stadium_id": "8",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Scotland",
+    "home_team_name_fa": "اسکاتلند",
+    "away_team_name_en": "Brazil",
+    "away_team_name_fa": "برزیل"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e050"
-    },
+    "_id": "679c9c8a5749c4077500e050",
     "id": "50",
     "home_team_id": "10",
     "away_team_id": "11",
@@ -997,12 +1093,14 @@
     "stadium_id": "7",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Morocco",
+    "home_team_name_fa": "مراکش",
+    "away_team_name_en": "Haiti",
+    "away_team_name_fa": "هائیتی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e051"
-    },
+    "_id": "679c9c8a5749c4077500e051",
     "id": "51",
     "home_team_id": "2",
     "away_team_id": "3",
@@ -1017,12 +1115,14 @@
     "stadium_id": "3",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "South Africa",
+    "home_team_name_fa": "آفریقای جنوبی",
+    "away_team_name_en": "South Korea",
+    "away_team_name_fa": "کره جنوبی"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e052"
-    },
+    "_id": "679c9c8a5749c4077500e052",
     "id": "52",
     "home_team_id": "4",
     "away_team_id": "1",
@@ -1037,12 +1137,14 @@
     "stadium_id": "1",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Czech Republic",
+    "home_team_name_fa": "جمهوری چک",
+    "away_team_name_en": "Mexico",
+    "away_team_name_fa": "مکزیک"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e053"
-    },
+    "_id": "679c9c8a5749c4077500e053",
     "id": "53",
     "home_team_id": "6",
     "away_team_id": "7",
@@ -1057,12 +1159,14 @@
     "stadium_id": "14",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Bosnia and Herzegovina",
+    "home_team_name_fa": "بوسنی و هرزگوین",
+    "away_team_name_en": "Qatar",
+    "away_team_name_fa": "قطر"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e054"
-    },
+    "_id": "679c9c8a5749c4077500e054",
     "id": "54",
     "home_team_id": "8",
     "away_team_id": "5",
@@ -1077,12 +1181,14 @@
     "stadium_id": "13",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Switzerland",
+    "home_team_name_fa": "سوئیس",
+    "away_team_name_en": "Canada",
+    "away_team_name_fa": "کانادا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e055"
-    },
+    "_id": "679c9c8a5749c4077500e055",
     "id": "55",
     "home_team_id": "18",
     "away_team_id": "19",
@@ -1097,12 +1203,14 @@
     "stadium_id": "10",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Curaçao",
+    "home_team_name_fa": "کوراسائو",
+    "away_team_name_en": "Ivory Coast",
+    "away_team_name_fa": "ساحل عاج"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e056"
-    },
+    "_id": "679c9c8a5749c4077500e056",
     "id": "56",
     "home_team_id": "20",
     "away_team_id": "17",
@@ -1117,12 +1225,14 @@
     "stadium_id": "11",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Ecuador",
+    "home_team_name_fa": "اکوادور",
+    "away_team_name_en": "Germany",
+    "away_team_name_fa": "آلمان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e057"
-    },
+    "_id": "679c9c8a5749c4077500e057",
     "id": "57",
     "home_team_id": "14",
     "away_team_id": "15",
@@ -1137,12 +1247,14 @@
     "stadium_id": "15",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Paraguay",
+    "home_team_name_fa": "پاراگوئه",
+    "away_team_name_en": "Australia",
+    "away_team_name_fa": "استرالیا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e058"
-    },
+    "_id": "679c9c8a5749c4077500e058",
     "id": "58",
     "home_team_id": "16",
     "away_team_id": "13",
@@ -1157,12 +1269,14 @@
     "stadium_id": "16",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Turkey",
+    "home_team_name_fa": "ترکیه",
+    "away_team_name_en": "United States",
+    "away_team_name_fa": "آمریکا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e059"
-    },
+    "_id": "679c9c8a5749c4077500e059",
     "id": "59",
     "home_team_id": "22",
     "away_team_id": "23",
@@ -1177,12 +1291,14 @@
     "stadium_id": "4",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Japan",
+    "home_team_name_fa": "ژاپن",
+    "away_team_name_en": "Sweden",
+    "away_team_name_fa": "سوئد"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e060"
-    },
+    "_id": "679c9c8a5749c4077500e060",
     "id": "60",
     "home_team_id": "24",
     "away_team_id": "21",
@@ -1197,12 +1313,14 @@
     "stadium_id": "6",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Tunisia",
+    "home_team_name_fa": "تونس",
+    "away_team_name_en": "Netherlands",
+    "away_team_name_fa": "هلند"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e061"
-    },
+    "_id": "679c9c8a5749c4077500e061",
     "id": "61",
     "home_team_id": "34",
     "away_team_id": "35",
@@ -1217,12 +1335,14 @@
     "stadium_id": "12",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Senegal",
+    "home_team_name_fa": "سنگال",
+    "away_team_name_en": "Iraq",
+    "away_team_name_fa": "عراق"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e062"
-    },
+    "_id": "679c9c8a5749c4077500e062",
     "id": "62",
     "home_team_id": "36",
     "away_team_id": "33",
@@ -1237,12 +1357,14 @@
     "stadium_id": "9",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Norway",
+    "home_team_name_fa": "نروژ",
+    "away_team_name_en": "France",
+    "away_team_name_fa": "فرانسه"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e063"
-    },
+    "_id": "679c9c8a5749c4077500e063",
     "id": "63",
     "home_team_id": "26",
     "away_team_id": "27",
@@ -1257,12 +1379,14 @@
     "stadium_id": "14",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Egypt",
+    "home_team_name_fa": "مصر",
+    "away_team_name_en": "Iran",
+    "away_team_name_fa": "ایران"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e064"
-    },
+    "_id": "679c9c8a5749c4077500e064",
     "id": "64",
     "home_team_id": "28",
     "away_team_id": "25",
@@ -1277,12 +1401,14 @@
     "stadium_id": "13",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "New Zealand",
+    "home_team_name_fa": "نیوزیلند",
+    "away_team_name_en": "Belgium",
+    "away_team_name_fa": "بلژیک"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e065"
-    },
+    "_id": "679c9c8a5749c4077500e065",
     "id": "65",
     "home_team_id": "30",
     "away_team_id": "31",
@@ -1297,12 +1423,14 @@
     "stadium_id": "5",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Cape Verde",
+    "home_team_name_fa": "کیپ ورد",
+    "away_team_name_en": "Saudi Arabia",
+    "away_team_name_fa": "عربستان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e066"
-    },
+    "_id": "679c9c8a5749c4077500e066",
     "id": "66",
     "home_team_id": "32",
     "away_team_id": "29",
@@ -1317,12 +1445,14 @@
     "stadium_id": "2",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Uruguay",
+    "home_team_name_fa": "اروگوئه",
+    "away_team_name_en": "Spain",
+    "away_team_name_fa": "اسپانیا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e067"
-    },
+    "_id": "679c9c8a5749c4077500e067",
     "id": "67",
     "home_team_id": "48",
     "away_team_id": "45",
@@ -1337,12 +1467,14 @@
     "stadium_id": "11",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Panama",
+    "home_team_name_fa": "پاناما",
+    "away_team_name_en": "England",
+    "away_team_name_fa": "انگلستان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e068"
-    },
+    "_id": "679c9c8a5749c4077500e068",
     "id": "68",
     "home_team_id": "46",
     "away_team_id": "47",
@@ -1357,12 +1489,14 @@
     "stadium_id": "10",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Croatia",
+    "home_team_name_fa": "کرواسی",
+    "away_team_name_en": "Ghana",
+    "away_team_name_fa": "غنا"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e069"
-    },
+    "_id": "679c9c8a5749c4077500e069",
     "id": "69",
     "home_team_id": "38",
     "away_team_id": "39",
@@ -1377,12 +1511,14 @@
     "stadium_id": "6",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Algeria",
+    "home_team_name_fa": "الجزایر",
+    "away_team_name_en": "Austria",
+    "away_team_name_fa": "اتریش"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e070"
-    },
+    "_id": "679c9c8a5749c4077500e070",
     "id": "70",
     "home_team_id": "40",
     "away_team_id": "37",
@@ -1397,12 +1533,14 @@
     "stadium_id": "4",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Jordan",
+    "home_team_name_fa": "اردن",
+    "away_team_name_en": "Argentina",
+    "away_team_name_fa": "آرژانتین"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e071"
-    },
+    "_id": "679c9c8a5749c4077500e071",
     "id": "71",
     "home_team_id": "44",
     "away_team_id": "41",
@@ -1417,12 +1555,14 @@
     "stadium_id": "8",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Colombia",
+    "home_team_name_fa": "کلمبیا",
+    "away_team_name_en": "Portugal",
+    "away_team_name_fa": "پرتغال"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e072"
-    },
+    "_id": "679c9c8a5749c4077500e072",
     "id": "72",
     "home_team_id": "42",
     "away_team_id": "43",
@@ -1437,12 +1577,14 @@
     "stadium_id": "7",
     "finished": "FALSE",
     "time_elapsed": "notstarted",
-    "type": "group"
+    "type": "group",
+    "home_team_name_en": "Democratic Republic of the Congo",
+    "home_team_name_fa": "جمهوری دموکراتیک کنگو",
+    "away_team_name_en": "Uzbekistan",
+    "away_team_name_fa": "ازبکستان"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e073"
-    },
+    "_id": "679c9c8a5749c4077500e073",
     "id": "73",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1462,9 +1604,7 @@
     "away_team_label": "Runner-up Group B"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e074"
-    },
+    "_id": "679c9c8a5749c4077500e074",
     "id": "74",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1484,9 +1624,7 @@
     "away_team_label": "3rd Group A/B/C/D/F"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e075"
-    },
+    "_id": "679c9c8a5749c4077500e075",
     "id": "75",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1506,9 +1644,7 @@
     "away_team_label": "Runner-up Group C"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e076"
-    },
+    "_id": "679c9c8a5749c4077500e076",
     "id": "76",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1528,9 +1664,7 @@
     "away_team_label": "Runner-up Group F"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e077"
-    },
+    "_id": "679c9c8a5749c4077500e077",
     "id": "77",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1550,9 +1684,7 @@
     "away_team_label": "3rd Group C/D/F/G/H"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e078"
-    },
+    "_id": "679c9c8a5749c4077500e078",
     "id": "78",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1572,9 +1704,7 @@
     "away_team_label": "Runner-up Group I"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e079"
-    },
+    "_id": "679c9c8a5749c4077500e079",
     "id": "79",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1594,9 +1724,7 @@
     "away_team_label": "3rd Group C/E/F/H/I"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07a"
-    },
+    "_id": "679c9c8a5749c4077500e07a",
     "id": "80",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1616,9 +1744,7 @@
     "away_team_label": "3rd Group E/H/I/J/K"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07b"
-    },
+    "_id": "679c9c8a5749c4077500e07b",
     "id": "81",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1638,9 +1764,7 @@
     "away_team_label": "3rd Group B/E/F/I/J"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07c"
-    },
+    "_id": "679c9c8a5749c4077500e07c",
     "id": "82",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1660,9 +1784,7 @@
     "away_team_label": "3rd Group A/E/H/I/J"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07d"
-    },
+    "_id": "679c9c8a5749c4077500e07d",
     "id": "83",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1682,9 +1804,7 @@
     "away_team_label": "Runner-up Group L"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07e"
-    },
+    "_id": "679c9c8a5749c4077500e07e",
     "id": "84",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1704,9 +1824,7 @@
     "away_team_label": "Runner-up Group J"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e07f"
-    },
+    "_id": "679c9c8a5749c4077500e07f",
     "id": "85",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1726,9 +1844,7 @@
     "away_team_label": "3rd Group E/F/G/I/J"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e080"
-    },
+    "_id": "679c9c8a5749c4077500e080",
     "id": "86",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1748,9 +1864,7 @@
     "away_team_label": "Runner-up Group H"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e081"
-    },
+    "_id": "679c9c8a5749c4077500e081",
     "id": "87",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1770,9 +1884,7 @@
     "away_team_label": "3rd Group D/E/I/J/L"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e082"
-    },
+    "_id": "679c9c8a5749c4077500e082",
     "id": "88",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1792,9 +1904,7 @@
     "away_team_label": "Runner-up Group G"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e083"
-    },
+    "_id": "679c9c8a5749c4077500e083",
     "id": "89",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1814,9 +1924,7 @@
     "away_team_label": "Winner Match 77"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e084"
-    },
+    "_id": "679c9c8a5749c4077500e084",
     "id": "90",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1836,9 +1944,7 @@
     "away_team_label": "Winner Match 75"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e085"
-    },
+    "_id": "679c9c8a5749c4077500e085",
     "id": "91",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1858,9 +1964,7 @@
     "away_team_label": "Winner Match 78"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e086"
-    },
+    "_id": "679c9c8a5749c4077500e086",
     "id": "92",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1880,9 +1984,7 @@
     "away_team_label": "Winner Match 80"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e087"
-    },
+    "_id": "679c9c8a5749c4077500e087",
     "id": "93",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1902,9 +2004,7 @@
     "away_team_label": "Winner Match 84"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e088"
-    },
+    "_id": "679c9c8a5749c4077500e088",
     "id": "94",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1924,9 +2024,7 @@
     "away_team_label": "Winner Match 82"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e089"
-    },
+    "_id": "679c9c8a5749c4077500e089",
     "id": "95",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1946,9 +2044,7 @@
     "away_team_label": "Winner Match 88"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08a"
-    },
+    "_id": "679c9c8a5749c4077500e08a",
     "id": "96",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1968,9 +2064,7 @@
     "away_team_label": "Winner Match 87"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08b"
-    },
+    "_id": "679c9c8a5749c4077500e08b",
     "id": "97",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -1990,9 +2084,7 @@
     "away_team_label": "Winner Match 90"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08c"
-    },
+    "_id": "679c9c8a5749c4077500e08c",
     "id": "98",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2012,9 +2104,7 @@
     "away_team_label": "Winner Match 94"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08d"
-    },
+    "_id": "679c9c8a5749c4077500e08d",
     "id": "99",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2034,9 +2124,7 @@
     "away_team_label": "Winner Match 92"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08e"
-    },
+    "_id": "679c9c8a5749c4077500e08e",
     "id": "100",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2056,9 +2144,7 @@
     "away_team_label": "Winner Match 96"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e08f"
-    },
+    "_id": "679c9c8a5749c4077500e08f",
     "id": "101",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2078,9 +2164,7 @@
     "away_team_label": "Winner Match 98"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e090"
-    },
+    "_id": "679c9c8a5749c4077500e090",
     "id": "102",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2100,9 +2184,7 @@
     "away_team_label": "Winner Match 100"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e091"
-    },
+    "_id": "679c9c8a5749c4077500e091",
     "id": "103",
     "home_team_id": "0",
     "away_team_id": "0",
@@ -2122,9 +2204,7 @@
     "away_team_label": "Loser Match 102"
   },
   {
-    "_id": {
-      "$oid": "679c9c8a5749c4077500e092"
-    },
+    "_id": "679c9c8a5749c4077500e092",
     "id": "104",
     "home_team_id": "0",
     "away_team_id": "0",
