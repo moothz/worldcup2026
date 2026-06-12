@@ -10,7 +10,29 @@ const OFF_GAME_INTERVAL = 30 * 60 * 1000; // 30 minutes
 const ON_GAME_INTERVAL = 1 * 60 * 1000;  // 1 minute
 const PRE_GAME_BUFFER = 15 * 60 * 1000;   // 15 minutes before match start
 
-function parseDate(dateStr) {
+// Map stadium ID to timezone offset (hours to add to local stadium time to reach Server GMT-3 time)
+// All offsets are calculated based on June Daylight Saving Time (DST) for USA/Canada,
+// and Mexico's permanent Standard Time (no DST since 2022).
+const STADIUM_OFFSETS = {
+    "1": 3,  // Mexico City (CST, UTC-6)
+    "2": 3,  // Guadalajara (CST, UTC-6)
+    "3": 3,  // Monterrey (CST, UTC-6)
+    "4": 2,  // Dallas (CDT, UTC-5)
+    "5": 2,  // Houston (CDT, UTC-5)
+    "6": 2,  // Kansas City (CDT, UTC-5)
+    "7": 1,  // Atlanta (EDT, UTC-4)
+    "8": 1,  // Miami (EDT, UTC-4)
+    "9": 1,  // Boston (EDT, UTC-4)
+    "10": 1, // Philadelphia (EDT, UTC-4)
+    "11": 1, // New York/New Jersey (EDT, UTC-4)
+    "12": 1, // Toronto (EDT, UTC-4)
+    "13": 4, // Vancouver (PDT, UTC-7)
+    "14": 4, // Seattle (PDT, UTC-7)
+    "15": 4, // San Francisco (PDT, UTC-7)
+    "16": 4  // Los Angeles (PDT, UTC-7)
+};
+
+function parseDate(dateStr, stadiumId = null) {
     // Format in JSON is "MM/DD/YYYY HH:mm" (Local stadium time)
     const [datePart, timePart] = dateStr.split(' ');
     const [month, day, year] = datePart.split('/');
@@ -20,10 +42,35 @@ function parseDate(dateStr) {
     const date = new Date(year, month - 1, day, hours, minutes);
     
     // Adjust for timezone difference (Stadium -> Server GMT-3)
-    // Based on user feedback: 13:00 stadium time = 16:00 server time
-    date.setHours(date.getHours() + 3);
+    const offset = stadiumId ? (STADIUM_OFFSETS[String(stadiumId)] ?? 3) : 3;
+    date.setHours(date.getHours() + offset);
     
     return date;
+}
+
+function getElapsedMatchTime(match) {
+    if (match.time_elapsed === "notstarted") return "Não iniciado";
+    if (match.finished === "TRUE") return "Fim de jogo";
+    if (match.time_elapsed !== "live") return match.time_elapsed;
+    
+    try {
+        const matchTime = parseDate(match.local_date, match.stadium_id);
+        const diffMs = Date.now() - matchTime.getTime();
+        let minutes = Math.floor(diffMs / 60000);
+        
+        if (minutes < 0) minutes = 0;
+        
+        if (minutes <= 45) {
+            return `${minutes}'`;
+        } else if (minutes > 45 && minutes <= 60) {
+            return "Intervalo";
+        } else {
+            const secondHalfMin = minutes - 15;
+            return `${secondHalfMin}'`;
+        }
+    } catch (e) {
+        return "live";
+    }
 }
 
 function formatTimeDiff(ms) {
@@ -47,8 +94,10 @@ const RAVENA_API_URL = process.env.RAVENA_API_URL || 'http://localhost:5000';
  * Sends a game event to the Ravena Bot API /copa endpoint
  */
 async function notifyCopa(event, match, goalDetails = null) {
+    const url = `${RAVENA_API_URL}/copa`;
     try {
-        await axios.post(`${RAVENA_API_URL}/copa`, {
+        console.log(`📡 Sending event '${event}' to Ravena bot at ${url}...`);
+        const response = await axios.post(url, {
             event,
             match: {
                 id: match.id,
@@ -59,16 +108,19 @@ async function notifyCopa(event, match, goalDetails = null) {
                 home_score: match.home_score,
                 away_score: match.away_score,
                 finished: match.finished,
-                time_elapsed: match.time_elapsed,
+                time_elapsed: getElapsedMatchTime(match),
                 stadium_id: match.stadium_id,
                 type: match.type,
                 group: match.group
             },
             goalDetails
         }, { timeout: 5000 });
-        console.log(`📡 Event '${event}' successfully sent to Ravena bot.`);
+        console.log(`📡 Event '${event}' successfully sent to Ravena bot. Response status: ${response.status}`);
     } catch (err) {
         console.error(`⚠️ Failed to notify Ravena bot about event '${event}':`, err.message);
+        if (err.response) {
+            console.error(`   Status: ${err.response.status}, Data:`, JSON.stringify(err.response.data));
+        }
     }
 }
 
@@ -98,7 +150,8 @@ function findNewScorer(oldScorers, newScorers) {
 async function syncGames() {
     try {
         console.log('🔄 Fetching live games data...');
-        const response = await axios.get(`${LIVE_API_BASE}/get/games`);
+        const response = await axios.get(`${LIVE_API_BASE}/get/games`, { timeout: 30000 });
+        console.log(`📡 GET ${LIVE_API_BASE}/get/games returned status ${response.status}. Games count: ${response.data?.games?.length || 0}`);
         const liveGames = response.data.games;
         
         if (!liveGames || !Array.isArray(liveGames)) {
@@ -116,17 +169,31 @@ async function syncGames() {
 
             // Status Logic
             if (liveGame.finished === "FALSE") {
-                const matchTime = parseDate(liveGame.local_date);
+                const matchTime = parseDate(liveGame.local_date, liveGame.stadium_id);
                 const timeDiff = matchTime - now;
                 
                 // If match is starting soon or currently in progress
-                // We fetch details for any match that hasn't finished and is within the buffer or already started
-                if (liveGame.time_elapsed !== "notstarted" || timeDiff <= PRE_GAME_BUFFER) {
+                // We fetch details for any match that hasn't finished and is within the buffer or already started.
+                // We also safeguard with an active start threshold (e.g. started less than 4 hours ago)
+                // so stale/postponed matches don't run 1m sync indefinitely if not marked as finished.
+                const isWithinBuffer = timeDiff <= PRE_GAME_BUFFER;
+                const isRecentStart = timeDiff >= -4 * 60 * 60 * 1000;
+                const isLiveTimeWindow = isWithinBuffer && isRecentStart;
+                
+                const isNotStarted = liveGame.time_elapsed === "notstarted";
+                const isActive = liveGame.time_elapsed !== "notstarted";
+
+                if (isLiveTimeWindow || isActive) {
+                    console.log(`ℹ️ Match ${liveGame.id} (${liveGame.home_team_name_en} vs ${liveGame.away_team_name_en}): ` +
+                                `finished=${liveGame.finished}, time_elapsed=${liveGame.time_elapsed}, ` +
+                                `local_date=${liveGame.local_date}, parsedMatchTime=${matchTime.toLocaleString()}, ` +
+                                `timeDiff=${formatTimeDiff(Math.abs(timeDiff))} ${timeDiff >= 0 ? 'ahead' : 'ago'} ` +
+                                `[isLiveTimeWindow=${isLiveTimeWindow}, isActive=${isActive}]`);
                     isGameLiveOrSoon = true;
                     shouldFetchDetail = true;
                 }
                 
-                // Track earliest upcoming game for countdown
+                // Track earliest upcoming game for countdown (only future games)
                 if (timeDiff > 0 && (!nextGameDate || matchTime < nextGameDate)) {
                     nextGameDate = matchTime;
                 }
@@ -134,14 +201,19 @@ async function syncGames() {
 
             if (shouldFetchDetail) {
                 try {
-                    console.log(`📡 Fetching realtime detail for match ${liveGame.id} (${liveGame._id})...`);
-                    const detailRes = await axios.get(`${LIVE_API_BASE}/get/game/${liveGame._id}`);
+                    const detailUrl = `${LIVE_API_BASE}/get/game/${liveGame._id}`;
+                    console.log(`📡 Fetching realtime detail for match ${liveGame.id} (${liveGame._id}) from ${detailUrl}...`);
+                    const detailRes = await axios.get(detailUrl, { timeout: 30000 });
+                    console.log(`📡 Detail match ${liveGame.id} returned status ${detailRes.status}`);
                     const detailData = detailRes.data.game || detailRes.data;
                     
                     if (detailData && detailData.id) {
+                        console.log(`   Detail fields: score=${detailData.home_score}-${detailData.away_score}, elapsed=${detailData.time_elapsed}, finished=${detailData.finished}`);
                         // Merge detail into liveGames array to ensure it's saved to JSON
                         liveGames[i] = { ...liveGame, ...detailData };
                         liveGame = liveGames[i];
+                    } else {
+                        console.warn(`⚠️ Match ${liveGame.id} detail response had invalid structure:`, JSON.stringify(detailRes.data).substring(0, 200));
                     }
                 } catch (err) {
                     console.error(`⚠️ Failed to fetch detail for match ${liveGame.id}:`, err.message);
@@ -152,37 +224,66 @@ async function syncGames() {
             const oldGame = await Game.findOne({ id: liveGame.id });
 
             if (oldGame) {
-                // 1. Detect Match Start (transitions from 'notstarted' to active)
-                if (oldGame.time_elapsed === "notstarted" && liveGame.time_elapsed !== "notstarted" && liveGame.finished !== "TRUE") {
-                    await notifyCopa("match_start", liveGame);
-                }
-
-                // 2. Detect Goals (scores increased)
                 const oldHomeScore = Number(oldGame.home_score) || 0;
                 const newHomeScore = Number(liveGame.home_score) || 0;
                 const oldAwayScore = Number(oldGame.away_score) || 0;
                 const newAwayScore = Number(liveGame.away_score) || 0;
 
+                const isElapsedChanged = oldGame.time_elapsed !== liveGame.time_elapsed;
+                const isFinishedChanged = oldGame.finished !== liveGame.finished;
+                const isScoreChanged = oldHomeScore !== newHomeScore || oldAwayScore !== newAwayScore;
+
+                if (isElapsedChanged || isFinishedChanged || isScoreChanged) {
+                    console.log(`🔄 Match ${liveGame.id} State Change Detected:`);
+                    console.log(`   - Finished: DB=${oldGame.finished} -> API=${liveGame.finished}`);
+                    console.log(`   - Elapsed: DB=${oldGame.time_elapsed} -> API=${liveGame.time_elapsed}`);
+                    console.log(`   - Score: DB=${oldHomeScore}-${oldAwayScore} -> API=${newHomeScore}-${newAwayScore}`);
+                }
+
+                // 1. Detect Match Start (transitions from 'notstarted' to active)
+                if (oldGame.time_elapsed === "notstarted" && liveGame.time_elapsed !== "notstarted" && liveGame.finished !== "TRUE") {
+                    console.log(`🚨 Detect Match Start: Match ${liveGame.id}`);
+                    await notifyCopa("match_start", liveGame);
+                }
+
+                // 2. Detect Goals (scores increased)
                 if (newHomeScore > oldHomeScore) {
                     const scorer = findNewScorer(oldGame.home_scorers, liveGame.home_scorers);
+                    let scorerName = scorer || "";
+                    let goalMinute = getElapsedMatchTime(liveGame);
+                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+')$/);
+                    if (minuteMatch) {
+                        scorerName = minuteMatch[1];
+                        goalMinute = minuteMatch[2];
+                    }
+                    console.log(`🚨 Detect Goal (Home): Match ${liveGame.id}, scorer=${scorerName}, minute=${goalMinute}, score=${newHomeScore}-${newAwayScore}`);
                     await notifyCopa("goal", liveGame, {
                         scoringTeamId: liveGame.home_team_id,
                         scoringTeamNameEn: liveGame.home_team_name_en,
-                        player: scorer || "",
-                        minute: liveGame.time_elapsed
+                        player: scorerName,
+                        minute: goalMinute
                     });
                 } else if (newAwayScore > oldAwayScore) {
                     const scorer = findNewScorer(oldGame.away_scorers, liveGame.away_scorers);
+                    let scorerName = scorer || "";
+                    let goalMinute = getElapsedMatchTime(liveGame);
+                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+')$/);
+                    if (minuteMatch) {
+                        scorerName = minuteMatch[1];
+                        goalMinute = minuteMatch[2];
+                    }
+                    console.log(`🚨 Detect Goal (Away): Match ${liveGame.id}, scorer=${scorerName}, minute=${goalMinute}, score=${newHomeScore}-${newAwayScore}`);
                     await notifyCopa("goal", liveGame, {
                         scoringTeamId: liveGame.away_team_id,
                         scoringTeamNameEn: liveGame.away_team_name_en,
-                        player: scorer || "",
-                        minute: liveGame.time_elapsed
+                        player: scorerName,
+                        minute: goalMinute
                     });
                 }
 
                 // 3. Detect Match End (transitions to finished)
                 if (oldGame.finished !== "TRUE" && liveGame.finished === "TRUE") {
+                    console.log(`🚨 Detect Match End: Match ${liveGame.id}`);
                     await notifyCopa("match_end", liveGame);
                 }
             }
@@ -204,7 +305,7 @@ async function syncGames() {
 
             if (result.modifiedCount > 0) {
                 updatedCount++;
-                console.log(`✅ Updated match ${liveGame.id}: ${liveGame.home_team_name_en} ${liveGame.home_score} - ${liveGame.away_score} ${liveGame.away_team_name_en}`);
+                console.log(`✅ Updated match ${liveGame.id} in DB: ${liveGame.home_team_name_en} ${liveGame.home_score} - ${liveGame.away_score} ${liveGame.away_team_name_en}`);
             }
         }
         
@@ -215,18 +316,22 @@ async function syncGames() {
             console.log('💾 football.matches.json updated.');
         }
 
-        return { isGameLiveOrSoon, nextGameDate };
+        return { isGameLiveOrSoon, nextGameDate, failed: false };
 
     } catch (error) {
         console.error('❌ Error syncing games:', error.message);
-        return { isGameLiveOrSoon: false, nextGameDate: null };
+        if (error.response) {
+            console.error(`   API response status: ${error.response.status}`);
+        }
+        return { isGameLiveOrSoon: false, nextGameDate: null, failed: true };
     }
 }
 
 async function syncGroups() {
     try {
         console.log('🔄 Fetching live groups data...');
-        const response = await axios.get(`${LIVE_API_BASE}/get/groups`);
+        const response = await axios.get(`${LIVE_API_BASE}/get/groups`, { timeout: 30000 });
+        console.log(`📡 GET ${LIVE_API_BASE}/get/groups returned status ${response.status}. Groups count: ${response.data?.groups?.length || 0}`);
         const liveGroups = response.data.groups;
         
         if (!liveGroups || !Array.isArray(liveGroups)) {
@@ -262,22 +367,39 @@ async function syncGroups() {
 
     } catch (error) {
         console.error('❌ Error syncing groups:', error.message);
+        if (error.response) {
+            console.error(`   API response status: ${error.response.status}`);
+        }
     }
 }
 
 async function runSyncCycle() {
     console.log(`\n🕒 Sync started at ${new Date().toLocaleString()}`);
     
-    const { isGameLiveOrSoon, nextGameDate } = await syncGames();
-    await syncGroups();
+    let isGameLiveOrSoon = false;
+    let nextGameDate = null;
+    let failed = false;
+
+    try {
+        const syncRes = await syncGames();
+        isGameLiveOrSoon = syncRes.isGameLiveOrSoon;
+        nextGameDate = syncRes.nextGameDate;
+        failed = syncRes.failed;
+        
+        await syncGroups();
+    } catch (cycleErr) {
+        console.error('❌ Error in sync cycle execution:', cycleErr.message);
+        failed = true;
+    }
     
     const now = new Date();
-    const nextInterval = isGameLiveOrSoon ? ON_GAME_INTERVAL : OFF_GAME_INTERVAL;
-    const mode = isGameLiveOrSoon ? "LIVE/SOON" : "OFF-GAME";
+    // If the sync failed, retry in 1 minute (ON_GAME_INTERVAL) instead of waiting 30 minutes
+    const nextInterval = failed ? ON_GAME_INTERVAL : (isGameLiveOrSoon ? ON_GAME_INTERVAL : OFF_GAME_INTERVAL);
+    const mode = failed ? "RETRY (API ERROR)" : (isGameLiveOrSoon ? "LIVE/SOON" : "OFF-GAME");
     
     let logMsg = `🏁 Sync cycle completed. Mode: ${mode}. Next sync in ${nextInterval / 1000 / 60}m.`;
     
-    if (!isGameLiveOrSoon && nextGameDate) {
+    if (!failed && !isGameLiveOrSoon && nextGameDate) {
         const countdown = formatTimeDiff(nextGameDate - now);
         logMsg += ` Next ON-GAME sync in ${countdown}.`;
     }
