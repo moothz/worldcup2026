@@ -80,7 +80,7 @@ app.use(helmet({
 app.use(compression());
 
 // Rate limiting - configurable per environment
-const limiter = rateLimit({
+const defaultLimiter = rateLimit({
     windowMs: config.RATE_LIMIT_WINDOW,
     max: config.RATE_LIMIT_MAX,
     message: {
@@ -91,6 +91,29 @@ const limiter = rateLimit({
     legacyHeaders: false,
     validate: { xForwardedForHeader: false },
 });
+
+// External users (coming from wc2026.moothz.win / original domain wc2026.moothz.win) rate limit: 1 request per 15s
+const externalLimiter = rateLimit({
+    windowMs: 15000, // 15 seconds
+    max: 1, // 1 request
+    message: {
+        error: 'Too many requests from wc2026.moothz.win, please try again later (limit 1 request per 15s).',
+        retryAfter: '15 seconds'
+    },
+    standardHeaders: true,
+    legacyHeaders: false,
+    validate: { xForwardedForHeader: false },
+});
+
+const limiter = (req, res, next) => {
+    const origin = req.headers.origin || '';
+    const referer = req.headers.referer || '';
+    if (origin.includes('wc2026.moothz.win') || referer.includes('wc2026.moothz.win')) {
+        return externalLimiter(req, res, next);
+    }
+    return defaultLimiter(req, res, next);
+};
+
 app.use(limiter);
 
 // Logging - always enabled

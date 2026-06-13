@@ -50,7 +50,7 @@ function loadEnvConfig() {
     ACCESSCODEDEV: process.env.ACCESSCODEDEV || 'devcode123',
 
     // Rate Limiting
-    RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW) || 60000,
+    RATE_LIMIT_WINDOW: parseInt(process.env.RATE_LIMIT_WINDOW) || parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 60000,
     RATE_LIMIT_MAX: parseInt(process.env.RATE_LIMIT_MAX) || 500,
 
     // CORS

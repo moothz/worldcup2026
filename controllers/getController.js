@@ -7,6 +7,22 @@ const Game = require('../models/game');
 const Stadium = require('../models/stadium');
 const MatchTable = require('../models/matchTable');
 
+// Simple in-memory cache store and helpers for route caching
+const routeCacheStore = {};
+function getRouteCached(req, ttlMs) {
+    const entry = routeCacheStore[req.originalUrl];
+    if (entry && (Date.now() - entry.timestamp) < ttlMs) {
+        return entry.data;
+    }
+    return null;
+}
+function setRouteCached(req, data) {
+    routeCacheStore[req.originalUrl] = {
+        data,
+        timestamp: Date.now()
+    };
+}
+
 // Cache for teams (static data)
 let teamsCache = null;
 let teamsCacheTime = 0;
@@ -61,10 +77,19 @@ async function getTeamsMap() {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/groups', async(req,res) => {
-    try{
-        const groups = await Group.find();
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(cached);
+    }
 
-        return res.send({groups});
+    try{
+        const groups = await Group.find().lean();
+        const response = {groups};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(response);
     }catch(err){
         return res.status(400).send({
             error: 'Error getting all groups'
@@ -109,16 +134,25 @@ router.get('/groups', async(req,res) => {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/group', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(cached);
+    }
+
     try{
         if(req.query.name == undefined){
             return res.status(400).send({
                 error: 'Error no query declared'
             });
         };
-        const group = await Group.findOne({name: req.query.name});
-        const teams = await Team.find({group: group._id});
-
-        return res.send({group, teams});
+        const group = await Group.findOne({name: req.query.name}).lean();
+        const teams = await Team.find({group: group._id}).lean();
+        const response = {group, teams};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(response);
     }catch(err){
         return res.status(400).send({
             error: `Error getting group with name: ${req.query.name}`
@@ -127,10 +161,19 @@ router.get('/group', async(req,res) => {
 });
 
 router.get('/groups', async(req,res) => {
-    try{
-        const groups = await Group.find();
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(cached);
+    }
 
-        return res.send({groups});
+    try{
+        const groups = await Group.find().lean();
+        const response = {groups};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(response);
     }catch(err){
         return res.status(400).send({
             error: 'Error getting all groups'
@@ -210,12 +253,21 @@ router.get('/groups', async(req,res) => {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/team/:idTeam', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(cached);
+    }
+
     try{
         const team = await Team.findById(req.params.idTeam).lean();
-
-        return res.send({team});
+        const response = {team};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(response);
     }catch(err){
-        return res.send.status(400).send({
+        return res.status(400).send({
             error: `Error getting team with id:${req.params.idTeam}`
         });
     };
@@ -254,6 +306,13 @@ router.get('/team/:idTeam', async(req,res) => {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/team', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(cached);
+    }
+
     try{
         if(req.query.name == undefined){
             return res.status(400).send({
@@ -261,9 +320,11 @@ router.get('/team', async(req,res) => {
             });
         };
         const name = req.query.name.charAt(0).toUpperCase() + req.query.name.slice(1);
-        const team = await Team.findOne({name_en: name});
-
-        return res.send({team});
+        const team = await Team.findOne({name_en: name}).lean();
+        const response = {team};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.send(response);
     }catch(err){
         return res.status(400).send({
             error: `Error getting team with name: ${req.query.name}`
@@ -272,6 +333,13 @@ router.get('/team', async(req,res) => {
 });
 
 router.get('/teams', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.status(200).json(cached);
+    }
+
     console.log('GET /teams called');
     try{
         let teams;
@@ -284,8 +352,11 @@ router.get('/teams', async(req,res) => {
             teams = await Team.find({}).lean();
             console.log('Found teams:', teams.length);
         }
+        const response = {teams};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
         console.log('Sending response...');
-        return res.status(200).json({teams});
+        return res.status(200).json(response);
     }catch(err){
         console.error('ERROR in /get/teams:', err);
         return res.status(400).json({
@@ -339,6 +410,13 @@ router.get('/teams', async(req,res) => {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/games', async(req,res) => {
+    const ttl = 5 * 60 * 1000; // 5 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=300');
+        return res.send(cached);
+    }
+
     try{
         // Use lean() for faster queries
         const games = await Game.find({}).lean();
@@ -361,7 +439,10 @@ router.get('/games', async(req,res) => {
             return game;
         });
 
-        return res.send({games: gamesWithNames});
+        const response = {games: gamesWithNames};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=300');
+        return res.send(response);
     }catch(err){
         return res.status(400).send({
             error: 'Error getting all games'
@@ -401,6 +482,11 @@ router.get('/games', async(req,res) => {
  *               $ref: '#/components/schemas/Error'
  */
 router.get('/game/:idGame', async(req,res) => {
+    // Explicitly prevent caching for individual game details
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+
     try{
         const game = await Game.findById(req.params.idGame).lean();
 
@@ -435,9 +521,19 @@ router.get('/game/:idGame', async(req,res) => {
  *         description: Error getting stadiums
  */
 router.get('/stadiums', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.status(200).json(cached);
+    }
+
     try{
         const stadiums = await Stadium.find().lean();
-        return res.status(200).json({stadiums});
+        const response = {stadiums};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.status(200).json(response);
     }catch(err){
         console.error('Error in /get/stadiums:', err);
         return res.status(400).json({
@@ -470,8 +566,15 @@ router.get('/stadiums', async(req,res) => {
  *         description: Error getting stadium
  */
 router.get('/stadium/:id', async(req,res) => {
+    const ttl = 15 * 60 * 1000; // 15 minutes
+    const cached = getRouteCached(req, ttl);
+    if (cached) {
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.status(200).json(cached);
+    }
+
     try{
-        const stadium = await Stadium.findOne({id: req.params.id});
+        const stadium = await Stadium.findOne({id: req.params.id}).lean();
         
         if (!stadium) {
             return res.status(404).json({
@@ -479,7 +582,10 @@ router.get('/stadium/:id', async(req,res) => {
             });
         }
         
-        return res.status(200).json({stadium});
+        const response = {stadium};
+        setRouteCached(req, response);
+        res.setHeader('Cache-Control', 'public, max-age=900');
+        return res.status(200).json(response);
     }catch(err){
         console.error('Error in /get/stadium:', err);
         return res.status(400).json({
