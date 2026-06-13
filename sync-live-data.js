@@ -105,6 +105,9 @@ async function notifyCopa(event, match, goalDetails = null) {
                 away_team_id: match.away_team_id,
                 home_team_name_en: match.home_team_name_en,
                 away_team_name_en: match.away_team_name_en,
+                // FIFA codes needed by BotAPI for flag emoji fallback
+                home_fifa_code: match.home_fifa_code,
+                away_fifa_code: match.away_fifa_code,
                 home_score: match.home_score,
                 away_score: match.away_score,
                 finished: match.finished,
@@ -114,7 +117,7 @@ async function notifyCopa(event, match, goalDetails = null) {
                 group: match.group
             },
             goalDetails
-        }, { timeout: 5000 });
+        }, { timeout: 15000 }); // 15s — bot may take a moment but delivery is reliable
         console.log(`📡 Event '${event}' successfully sent to Ravena bot. Response status: ${response.status}`);
     } catch (err) {
         console.error(`⚠️ Failed to notify Ravena bot about event '${event}':`, err.message);
@@ -240,18 +243,35 @@ async function syncGames() {
                     console.log(`   - Score: DB=${oldHomeScore}-${oldAwayScore} -> API=${newHomeScore}-${newAwayScore}`);
                 }
 
+                // Sanity check: reject absurdly large scores that indicate corrupt upstream data.
+                // The remote API has been seen returning persian_date year (e.g. 1405) as a score value.
+                const MAX_REALISTIC_SCORE = 30;    // no football match ever ends 30+
+                const MAX_SCORE_DELTA = 10;         // no team scores 10+ between two 1-minute syncs
+                const homeScoreSane = newHomeScore <= MAX_REALISTIC_SCORE && (newHomeScore - oldHomeScore) <= MAX_SCORE_DELTA;
+                const awayScoreSane = newAwayScore <= MAX_REALISTIC_SCORE && (newAwayScore - oldAwayScore) <= MAX_SCORE_DELTA;
+                const scoreDataSane = homeScoreSane && awayScoreSane;
+
+                if (!scoreDataSane) {
+                    console.warn(`⚠️ Match ${liveGame.id} — Suspicious score data from API (${newHomeScore}-${newAwayScore}). Discarding score to avoid corrupt state.`);
+                    // Revert score in liveGame so DB and football.matches.json keep the last known good value
+                    liveGame.home_score = oldGame.home_score;
+                    liveGame.away_score = oldGame.away_score;
+                    liveGame.home_scorers = oldGame.home_scorers;
+                    liveGame.away_scorers = oldGame.away_scorers;
+                }
+
                 // 1. Detect Match Start (transitions from 'notstarted' to active)
                 if (oldGame.time_elapsed === "notstarted" && liveGame.time_elapsed !== "notstarted" && liveGame.finished !== "TRUE") {
                     console.log(`🚨 Detect Match Start: Match ${liveGame.id}`);
                     await notifyCopa("match_start", liveGame);
                 }
 
-                // 2. Detect Goals (scores increased)
-                if (newHomeScore > oldHomeScore) {
+                // 2. Detect Goals (scores increased) — only if score data passed sanity check
+                if (scoreDataSane && newHomeScore > oldHomeScore) {
                     const scorer = findNewScorer(oldGame.home_scorers, liveGame.home_scorers);
                     let scorerName = scorer || "";
                     let goalMinute = getElapsedMatchTime(liveGame);
-                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+')$/);
+                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+'?)$/);
                     if (minuteMatch) {
                         scorerName = minuteMatch[1];
                         goalMinute = minuteMatch[2];
@@ -263,11 +283,11 @@ async function syncGames() {
                         player: scorerName,
                         minute: goalMinute
                     });
-                } else if (newAwayScore > oldAwayScore) {
+                } else if (scoreDataSane && newAwayScore > oldAwayScore) {
                     const scorer = findNewScorer(oldGame.away_scorers, liveGame.away_scorers);
                     let scorerName = scorer || "";
                     let goalMinute = getElapsedMatchTime(liveGame);
-                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+')$/);
+                    const minuteMatch = scorerName.match(/^(.*?)\s*(\d+'?)$/);
                     if (minuteMatch) {
                         scorerName = minuteMatch[1];
                         goalMinute = minuteMatch[2];
@@ -288,19 +308,25 @@ async function syncGames() {
                 }
             }
 
-            // Update database
+            // Update database (upsert so new games added mid-tournament are inserted with the correct _id)
+            const updateFields = {
+                home_score: liveGame.home_score,
+                away_score: liveGame.away_score,
+                home_scorers: liveGame.home_scorers,
+                away_scorers: liveGame.away_scorers,
+                finished: liveGame.finished,
+                time_elapsed: liveGame.time_elapsed
+            };
+            const setOnInsertFields = {};
+            if (liveGame._id) setOnInsertFields._id = liveGame._id;
+
             const result = await Game.updateOne(
                 { id: liveGame.id },
                 {
-                    $set: {
-                        home_score: liveGame.home_score,
-                        away_score: liveGame.away_score,
-                        home_scorers: liveGame.home_scorers,
-                        away_scorers: liveGame.away_scorers,
-                        finished: liveGame.finished,
-                        time_elapsed: liveGame.time_elapsed
-                    }
-                }
+                    $set: updateFields,
+                    ...(Object.keys(setOnInsertFields).length ? { $setOnInsert: setOnInsertFields } : {})
+                },
+                { upsert: true }
             );
 
             if (result.modifiedCount > 0) {

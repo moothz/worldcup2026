@@ -57,6 +57,8 @@ async function importMatches() {
             }
 
             const gameData = {
+                // Preserve the upstream _id so our MongoDB IDs mirror the remote API
+                ...(item._id ? { _id: item._id } : {}),
                 id: item.id,
                 home_team_id: item.home_team_id,
                 away_team_id: item.away_team_id,

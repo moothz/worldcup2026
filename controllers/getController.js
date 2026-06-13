@@ -34,12 +34,13 @@ async function getTeamsMap() {
         return teamsCache;
     }
     
-    const teams = await Team.find({}, 'id name_en name_fa').lean();
+    const teams = await Team.find({}, 'id name_en name_fa fifa_code').lean();
     const teamMap = {};
     teams.forEach(team => {
         teamMap[team.id] = {
             name_en: team.name_en,
-            name_fa: team.name_fa
+            name_fa: team.name_fa,
+            fifa_code: team.fifa_code
         };
     });
     
@@ -429,11 +430,13 @@ router.get('/games', async(req,res) => {
             if(game.home_team_id && teamMap[game.home_team_id]) {
                 game.home_team_name_en = teamMap[game.home_team_id].name_en;
                 game.home_team_name_fa = teamMap[game.home_team_id].name_fa;
+                game.home_fifa_code = teamMap[game.home_team_id].fifa_code;
             }
             
             if(game.away_team_id && teamMap[game.away_team_id]) {
                 game.away_team_name_en = teamMap[game.away_team_id].name_en;
                 game.away_team_name_fa = teamMap[game.away_team_id].name_fa;
+                game.away_fifa_code = teamMap[game.away_team_id].fifa_code;
             }
             
             return game;
