@@ -47,14 +47,28 @@ if (config.ENABLE_SWAGGER) {
     console.log('⚠️ Swagger is disabled');
 }
 
-// CORS - must be before other middleware
+// CORS - public read endpoints must be reachable from browsers on other origins
 const corsOrigins = config.getCorsOrigins();
-app.use(cors({
+const publicCorsOptions = {
+    origin: '*',
+    methods: ['GET', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    credentials: false
+};
+const privateCorsOptions = {
     origin: corsOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
     credentials: true
-}));
+};
+
+app.use((req, res, next) => {
+    if (req.path.startsWith('/get')) {
+        return cors(publicCorsOptions)(req, res, next);
+    }
+
+    return cors(privateCorsOptions)(req, res, next);
+});
 
 // Security middleware
 app.use(helmet({
