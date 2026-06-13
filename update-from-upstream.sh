@@ -14,7 +14,7 @@ git fetch upstream
 
 # 2. Merge updates
 echo "🔀 Merging upstream/main into local main..."
-if git merge upstream/main; then
+if git merge --no-edit upstream/main; then
     echo "✅ Merge successful."
 else
     echo "❌ Merge failed! Please resolve conflicts manually."
